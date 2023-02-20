@@ -15,7 +15,7 @@
 						<!-- modal -->
 							<!-- Button trigger modal -->
 							<button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-							Launch demo modal
+							Tambah User	
 							</button>
 
 							<!-- Modal -->
@@ -28,7 +28,8 @@
 								</div>
 								<div class="modal-body"> 
 									<form action="<?= base_url('user')?>" method="POST" enctype="multipart/form-data">
-									<button type="button" class="btn btn-primary">Save changes</button>
+									
+
 									</form>
 
 								</div>
@@ -50,12 +51,11 @@
 									<table class="table  datanew ">
 										<thead>
 											<tr>
-												<th>Name</th>
-												<th>Position</th>
-												<th>Office</th>
-												<th>Age</th>
-												<th>Start date</th>
-												<th>Salary</th>
+												<th>Nama</th>
+												<th>Username</th>
+												<th>Outlet</th>
+												<th>Role</th>
+												<th>Aksi</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -65,7 +65,8 @@
 												<td>Edinburgh</td>
 												<td>61</td>
 												<td>2011/04/25</td>
-												<td>$320,800</td>
+												<td><a class="btn btn-success" href="<?php echo base_url(); ?>">Edit</a>
+												<a class="btn btn-danger" href="<?php echo base_url(); ?>">Hapus</a></td>
 											</tr>
 										</tbody>
 									</table>

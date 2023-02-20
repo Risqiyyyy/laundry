@@ -14,6 +14,7 @@
 </head>
 <body>
 
+
     <div class="main">
         <!-- Sing in  Form -->
         <section class="sign-in">
@@ -23,6 +24,7 @@
                         <figure><img src="<?= base_url();?>/assets/images/logo-laundry.png" alt="sing up image"></figure>
                         <a href="<?= site_url('auth/register');?>" class="signup-image-link">Create an account</a>
                     </div>
+                    <?= $this->session->flashdata('message') ?>
 
                     <div class="signin-form">
                         <h2 class="form-title">Sign In</h2>
@@ -30,10 +32,12 @@
                             <div class="form-group">
                                 <label><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="username" placeholder="Username"/>
+                                <?= form_error('username', '<small class="text-danger pl-2">', '</small>') ?>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                                <input type="password" name="password" id="your_pass" placeholder="Password"/>
+                                <?= form_error('password', '<small class="text-danger pl-2">', '</small>') ?>
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="submit" class="form-submit" value="Log in"/>
