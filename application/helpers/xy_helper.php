@@ -35,6 +35,6 @@ function access_menu_s2(){
 function is_login(){
     $ci = get_instance();
     if(!$ci->session->userdata('role')){
-        redirect('auth/login');
+        redirect('auth');
     }
 }

@@ -1,4 +1,6 @@
-
+<script>
+      feather.replace()
+    </script>
 		<script src="<?= base_url();?>/template/assets/js/jquery-3.6.0.min.js"></script>
 		<script src="<?= base_url();?>/template/assets/js/feather.min.js"></script>
 		<script src="<?= base_url();?>/template/assets/js/jquery.slimscroll.min.js"></script>
