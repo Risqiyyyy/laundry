@@ -10,49 +10,53 @@ class Auth extends CI_Controller {
 
 	public function index()
 	{
+        if ($this->session->userdata('role') != null) {
+            redirect('dashboard');
+        }
 		$this->load->view('auth/login');
 	}
 
     public function login()
     {
-        
+        if ($this->session->userdata('role') != null) {
+            redirect('dashboard');
+        }
         $this->form_validation->set_rules('username', 'Username', 'required|trim');
         $this->form_validation->set_rules('password', 'Password', 'required|trim');
 
         if ($this->form_validation->run() === false) {
-            $this->load->view('auth/login');
+            $this->load->view('auth');
         } else {
             $this->aksi_login();
         }
     }
  
 	function aksi_login(){
-
+        if ($this->session->userdata('role') != null) {
+            redirect('dashboard');
+        }
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-        $cek_user = $this->db->get_where('tb_user', ['username' => $username])->num_rows();
-        $user_arr = $this->db->get_where('tb_user', ['username' => $password])->row_array();
-        if ($cek_user == 1) {
-            if(password_verify($password, $user_arr['password'])){
+        $cek_user = $this->db->get_where('tb_user', ['username' => $username])->row_array();
+        if ($cek_user) {
+            if(password_verify($password, $cek_user['password'])){
                 $data_session = array(
                     'nama' => $username,
                     'status' => "login",
-                    'role' => $user_arr['role']
+                    'role' => $cek_user['role']
                     );
-
                 $this->session->set_userdata($data_session);
                 redirect(base_url("dashboard"));
             }else{
                 $this->session->set_flashdata('message', '<div class="alert alert-danger">Password atau username salah!</div>');
-                $this->load->view('auth/login');
-                redirect('auth/login');
+                redirect('auth');
             }
         }
 		
 	}
 
     function register(){
-        if ($this->session->userdata('role')) {
+        if ($this->session->userdata('role') != null) {
             redirect('dashboard');
         }
 
@@ -68,6 +72,9 @@ class Auth extends CI_Controller {
     }
 
     function aksi_register(){
+        if ($this->session->userdata('role') != null) {
+            redirect('dashboard');
+        }
         $nama = $this->input->post('nama');
         $username = $this->input->post('username');
 		$password = $this->input->post('password');

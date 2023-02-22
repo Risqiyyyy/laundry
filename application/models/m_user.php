@@ -14,5 +14,9 @@ class M_user extends CI_Model{
 	{
 		$this->db->insert('tb_user', $data);
 	}
+
+	function tampil_data_member(){
+		return $this->db->get('tb_member');
+	}
 	
 }

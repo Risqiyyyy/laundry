@@ -14,6 +14,13 @@
 										alt="img"><span>Paket</span></a>
 							</li>
 
+							<li class="submenu"><a href="javascript:void(0);"><i data-feather="repeat"></i><span>Transaksi</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class=""><a href="<?= base_url('transaksi')?>">Tambah Transaksi</a></li>
+									<li><a href="">Status Transaksi</a></li>
+								</ul>
+							</li>
+
 							<li class="submenu"><a href="javascript:void(0);"><img src="<?= base_url();?>/template/assets/img/icons/settings.svg"
 										alt="img"><span>Settings</span><span class="menu-arrow"></span></a>
 								<ul>
