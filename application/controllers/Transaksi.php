@@ -25,12 +25,15 @@ class Transaksi extends CI_Controller {
     function tambah(){
         if(isset($_POST['submit']))
 		{   
+            $id = $this->input->post('');
 			$id_outlet = $this->input->post('id_outlet');
+            $id_paket = $this->input->post('id_paket');
             $kode_invoice = $this->input->post('kode_invoice');
             $id_member = $this->input->post('id_member');
             $tgl = $this->input->post('tgl');
             $batas_waktu = $this->input->post('batas_waktu');
             $tgl_bayar = $this->input->post('tgl_bayar');
+            $biaya_tambahan = $this->input->post('biaya_tambahan');
             $diskon = $this->input->post('diskon');
             $pajak = $this->input->post('pajak');
             $status = $this->input->post('status');
@@ -43,12 +46,17 @@ class Transaksi extends CI_Controller {
                 'tgl' => $tgl,
                 'batas_waktu' => $batas_waktu,
                 'tgl_bayar' => $tgl_bayar,
+                'biaya_tambahan' => $biaya_tambahan,
                 'diskon' => $diskon,
                 'pajak' => $pajak,
                 'status' => $status,
                 'dibayar' => $dibayar,
                 'id_user' => $id_user
 			);
+            $data_detail_transaksi = array(
+                'id_transaksi' => $id,
+                'paket' => $id_paket
+            );
 			$this->m_data->tambah_transaksi($data_trasnsaksi);
 			redirect('transaksi');
 		}
@@ -66,8 +74,9 @@ class Transaksi extends CI_Controller {
 	}
 
     function detail_transaksi($id){
-        $where = array('id' => $id);
-	    $data['transaksi'] = $this->m_data->edit_data_transaksi($where,'tb_transaksi')->result();  
-        $this->load->view('transaksi/detail');
+	    $data['trans'] = $this->m_data->detail_transaksi($id);
+        $this->load->view('transaksi/detail',$data);
+        var_dump($data);
+        die;
     }
 }

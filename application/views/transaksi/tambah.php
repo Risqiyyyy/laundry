@@ -35,7 +35,7 @@
 												<div class="form-group col row">
 													<label clas="row">Kode Invoice</label>
 													<input type="text" class="form-control" name="kode_invoice"
-														placeholder="Kode Invoice">
+														placeholder="Kode Invoice" required>
 												</div>
 												<div class="form-group col row">
 													<label clas="row">Member</label>
@@ -70,7 +70,16 @@
 													<input type="text" class="form-control" name="biaya_tambahan"
 														placeholder="Biaya Tambahan">
 												</div>
+												<!-- <div class="form-group col row">
+													<label clas="row">Paket</label>
+													<select class="form-control" name="paket" required>
+                                                    <option value="">No Selected</option>
+													<option value="satuan">Satuan</option>
+													<option value="kiloan">Kiloan</option>
+													</select>
+												</div> -->
 											</div>
+											
 										</div>
 										<div class="row">
 											<div class="col">
@@ -87,7 +96,7 @@
 													<select class="form-control" name="status" required>
                                                     <option >No Selected</option>
                                                     <option value="baru">Baru</option>
-                                                    <option value="diproses">Di Proses</option>>
+                                                    <option value="proses">Di Proses</option>>
 													</select>
 												</div>
                                                 <div class="form-group col row">
