@@ -1,4 +1,4 @@
-<head>
+<head></head>
 	<?php $this->load->view('_partials/head.php'); ?>
 </head>
 <?php $this->load->view('_partials/sidebar.php'); ?>
@@ -46,8 +46,8 @@
 													<label>Outlet</label>
 													<select class="form-control" name="id_outlet" required>
 														<option value="">No Selected</option>
-														<?php foreach($user as $row):?>
-														<option value="<?php echo $row->id;?>"><?php echo $row->id_outlet;?></option>
+														<?php foreach($outlet as $row):?>
+														<option value="<?php echo $row->id;?>"><?php echo $row->nama;?></option>
 														<?php endforeach;?>
 													</select>
 												</div>
@@ -55,6 +55,7 @@
 												<div class="form-group">
 													<label>Role</label>
 													<select class="form-control" name="role" required>
+														<option value="">No Selected</option>
 														<option value="Admin">Admin</option>
 														<option value="Kasir">Kasir</option>
 														<option value="Owner">Owner</option>
@@ -96,13 +97,13 @@
 										<tbody>
 											<tr>
 												<td><?php echo $no++ ?></td>
-												<td><?php echo $u->nama ?></td>
+												<td><?php echo $u->nama_user ?></td>
 												<td><?php echo $u->username ?></td>
-												<td><?php echo $u->id_outlet ?></td>
+												<td><?php echo $u->nama_outlet ?></td>
 												<td><?php echo $u->role ?></td>
 												<td>
-												<a class="btn btn-success" href="<?php echo base_url(); ?>user/edit/<?php echo $u->id; ?>">Edit</a>
-												<a class="btn btn-danger" href="<?php echo base_url(); ?>user/hapus/<?php echo $u->id; ?>">Hapus</a>
+												<a class="btn btn-success" href="<?php echo base_url(); ?>user/edit/<?php echo $u->id_user; ?>">Edit</a>
+												<a class="btn btn-danger" href="<?php echo base_url(); ?>user/hapus/<?php echo $u->id_user; ?>">Hapus</a>
 												</td>
 											</tr>
 										</tbody>

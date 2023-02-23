@@ -13,10 +13,10 @@ class Transaksi extends CI_Controller {
 
 	public function index()
 	{
-        $data['transaksi'] = $this->m_data->tampil_data_transaksi2()->result();
+        $data['transaksi'] = $this->m_data->tampil_data_transaksi();
         $data['outlet'] = $this->m_outlet->tampil_data()->result();
         $data['member'] = $this->m_user->tampil_data_member()->result();
-        $data['user'] = $this->m_user->tampil_data()->result();
+        $data['user'] = $this->m_user->tampil_data();
 		$this->load->view('transaksi/tambah',$data);
         // var_dump($data);
         // die;
@@ -37,9 +37,9 @@ class Transaksi extends CI_Controller {
             $dibayar = $this->input->post('dibayar');
             $id_user = $this->input->post('id_user');
 			$data_trasnsaksi = array(
-				'id_outlet'=> 1,
+				'id_outlet'=> $id_outlet,
 				'kode_invoice' => $kode_invoice,
-                'id_member' => 1,
+                'id_member' => $id_member,
                 'tgl' => $tgl,
                 'batas_waktu' => $batas_waktu,
                 'tgl_bayar' => $tgl_bayar,
@@ -47,7 +47,7 @@ class Transaksi extends CI_Controller {
                 'pajak' => $pajak,
                 'status' => $status,
                 'dibayar' => $dibayar,
-                'id_user' => 16
+                'id_user' => $id_user
 			);
 			$this->m_data->tambah_transaksi($data_trasnsaksi);
 			redirect('transaksi');

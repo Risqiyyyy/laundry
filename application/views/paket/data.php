@@ -30,12 +30,22 @@
                                     <div class="modal-body">
                                         <div class="form-row">
                                                 <div class="form-group">
-                                                <label>Outlet ID</label>
-                                                    <input type="text" class="form-control" name="id_outlet" placeholder="Nama Outlet">
-                                                </div>
+                                                <label>Outlet</label>
+												<select class="form-control" name="id_outlet">
+                                                    <option value="">No Selected</option>
+														<?php foreach($paket as $row){?>
+														<option value="<?php echo $row->id;?>">
+															<?php echo $row->nama;?></option>
+														<?php }?>
+													</select>
+												</div>
                                                 <div class="form-group">
-                                                <label>Jenis Pket</label>
-                                                    <input type="text" class="form-control" name="jenis" placeholder="Jenis Paket">
+                                                <label>Jenis Paket</label>
+												<select class="form-control" name="jenis">
+                                                    <option value="">No Selected</option>
+													<option value="kiloan">Kiloan</option>
+													<option value="satuan">Satuan</option>
+													</select>
                                                 </div>
                                                 <div class="form-group">
                                                 <label >Nama Paket</label>
@@ -81,7 +91,7 @@
 										<tbody>
 											<tr>
 												<td><?php echo $no++ ?></td>
-												<td><?php echo $u->id_outlet ?></td>
+												<td><?php echo $u->nama ?></td>
 												<td><?php echo $u->jenis ?></td>
 												<td><?php echo $u->nama_paket ?></td>
                                                 <td><?php echo $u->harga ?></td>

@@ -3,7 +3,7 @@
 </head>
 <?php $this->load->view('_partials/sidebar.php'); ?>
 			<div class="page-wrapper">
-				<div class="content">
+				<div class="content">							
 					
 				</div>
 			</div>

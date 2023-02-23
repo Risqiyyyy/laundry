@@ -2,7 +2,11 @@
 class M_data extends CI_Model{
 
     function tampil_data_paket(){
-		return $this->db->get('tb_paket');
+		$this->db->select('*,tb_paket.id as paket_id, tb_outlet.id as outlet_id');
+		$this->db->from('tb_paket'); 
+		$this->db->join('tb_outlet', 'tb_outlet.id = tb_paket.id_outlet');
+		$query = $this->db->get();
+		return $query->result();
 	}
 
     function tambah_paket($data)
@@ -21,12 +25,13 @@ class M_data extends CI_Model{
 
 
 	function tampil_data_transaksi(){
-		$this->db->select('tb_transaksi.*,tb_outlet.nama,tb_outlet.id AS outlet,tb_member.id AS member,tb_user.id AS user,tb_outlet.nama AS nama_outlet');
-		$this->db->from('tb_transaksi');
-		$this->db->join('tb_outlet','tb_outlet.id = tb_transaksi.id', 'left');
-		$this->db->join('tb_member','tb_member.id = tb_transaksi.id', 'left');
-		$this->db->join('tb_user','tb_user.id = tb_transaksi.id', 'left');
-		return $this->db->get();
+		$this->db->select('*,tb_transaksi.id as transaksi_id, tb_outlet.id as outlet_id, tb_member.nama as nama_member,tb_user.nama as nama_user,tb_outlet.nama as nama_outlet');
+		$this->db->from('tb_transaksi'); 
+		$this->db->join('tb_outlet', 'tb_outlet.id = tb_transaksi.id_outlet');
+		$this->db->join('tb_member', 'tb_member.id = tb_transaksi.id_member');
+		$this->db->join('tb_user', 'tb_user.id = tb_transaksi.id_user');
+		$query = $this->db->get();
+		return $query->result();
 
 	}
 	

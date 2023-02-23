@@ -6,12 +6,15 @@ class Paket extends CI_Controller {
     function __construct(){
 		parent::__construct();
 		$this->load->model('m_data');
+		$this->load->model('m_outlet');
 	}
 
 	public function index()
 	{
-        $data['paket'] = $this->m_data->tampil_data_paket()->result();
+        $data['paket'] = $this->m_data->tampil_data_paket();
 		$this->load->view('paket/data',$data);
+		// var_dump($data);
+		// die;
 	}
 
     function tambah(){
@@ -23,7 +26,7 @@ class Paket extends CI_Controller {
             $harga = $this->input->post('harga');
 			$data_paket = array(
 				'id_outlet'=>$id_outlet,
-				'jenis'=>$jenis,
+				'jenis'=> $jenis,
 				'nama_paket'=> $nama_paket,
                 'harga'=> $harga,
 			);

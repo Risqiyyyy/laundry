@@ -45,8 +45,8 @@
 								<div class="profileset"><span class="user-img"><img src="<?= base_url();?>/template/assets/img/profiles/avator1.jpg"
 											alt=""><span class="status online"></span></span>
 									<div class="profilesets">
-										<h6>AGUS</h6>
-										<h5>Admin</h5>
+										<h6><?= $this->session->userdata('nama')?></h6>
+										<h5><?= $this->session->userdata('role')?></h5>
 									</div>
 								</div>
 								<hr class="m-0"><a class="dropdown-item" href="profile.html"><i class="me-2"

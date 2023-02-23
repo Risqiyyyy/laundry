@@ -36,7 +36,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="password" id="your_pass" placeholder="Password"/>
+                                <input type="password" name="password"  placeholder="Password"/>
                                 <?= form_error('password', '<small class="text-danger pl-2">', '</small>') ?>
                             </div>
                             <div class="form-group form-button">

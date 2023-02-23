@@ -24,7 +24,7 @@
 											<div class="col">
 												<div class="form-group col row">
 													<label clas="row">Outlet</label>
-													<select class="form-control" name="id_outlet" >
+													<select class="form-control" name="id_outlet" required>
 														<option value="">No Selected</option>
 														<?php foreach($outlet as $row):?>
 														<option value="<?php echo $row->id;?>">
@@ -39,7 +39,7 @@
 												</div>
 												<div class="form-group col row">
 													<label clas="row">Member</label>
-													<select class="form-control" name="id_member">
+													<select class="form-control" name="id_member" required>
                                                     <option value="">No Selected</option>
 														<?php foreach($member as $row){?>
 														<option value="<?php echo $row->id;?>">
@@ -84,7 +84,7 @@
 												</div>
                                                 <div class="form-group col row">
 													<label clas="row">Status</label>
-													<select class="form-control" name="status" >
+													<select class="form-control" name="status" required>
                                                     <option >No Selected</option>
                                                     <option value="baru">Baru</option>
                                                     <option value="diproses">Di Proses</option>>
@@ -92,7 +92,7 @@
 												</div>
                                                 <div class="form-group col row">
 													<label clas="row">Bayar</label>
-													<select class="form-control" name="dibayar" >
+													<select class="form-control" name="dibayar" required>
                                                     <option>No Selected</option>
                                                     <option value="dibayar">Dibayar</option>
                                                     <option value="belum_bayar">Belum Bayar</option>
@@ -101,11 +101,11 @@
                                                 
 												<div class="form-group col row">
 													<label clas="row">User</label>
-													<select class="form-control" name="id_user"     >
+													<select class="form-control" name="id_user" required>
                                                     <option value="">No Selected</option>
 														<?php foreach($user as $row):?>
-														<option value="<?php echo $row->id;?>">
-															<?php echo $row->nama;?></option>
+														<option value="<?php echo $row->id_user;?>">
+															<?php echo $row->nama_user;?></option>
 														<?php endforeach;?>
 													</select>
 												</div>
@@ -151,9 +151,9 @@
 										foreach($transaksi as $u){
 										?>
 													<td><?php echo $no++ ?></td>
-													<td><?php echo $u->id_outlet ?></td>
+													<td><?php echo $u->nama_outlet ?></td>
 													<td><?php echo $u->kode_invoice ?></td>
-                                                    <td><?php echo $u->id_member ?></td>
+                                                    <td><?php echo $u->nama_member ?></td>
 													<td><?php echo $u->tgl ?></td>
 													<td><?php echo $u->batas_waktu ?></td>
 													<td><?php echo $u->tgl_bayar ?></td>
@@ -162,14 +162,14 @@
 													<td><?php echo $u->pajak ?></td>
 													<td><?php echo $u->status ?></td>
 													<td><?php echo $u->dibayar ?></td>
-													<td><?php echo $u->id_user ?></td>
+													<td><?php echo $u->nama_user ?></td>
 													<td>
 														<a class="btn btn-primary"
-															href="<?php echo base_url(); ?>pdfview/<?php echo $u->id; ?>">Cetak</a>
+															href="<?php echo base_url(); ?>GeneratePdfController/">Cetak</a>
 														<a class="btn btn-danger"
-															href="<?php echo base_url(); ?>transaksi/hapus/<?php echo $u->id; ?>">Hapus</a>
+															href="<?php echo base_url(); ?>transaksi/hapus/<?php echo $u->transaksi_id;?>">Hapus</a>
                                                             <a class="btn btn-success"
-															href="<?php echo base_url(); ?>transaksi/detail_transaksi/<?php echo $u->id; ?>">Detail</a>
+															href="<?php echo base_url(); ?>transaksi/detail_transaksi/<?php echo $u->transaksi_id; ?>">Detail</a>
 													</td>
 												</tr>
                                                 <?php }?>
