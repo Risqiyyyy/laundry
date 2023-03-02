@@ -17,6 +17,7 @@ class Transaksi extends CI_Controller {
         $data['outlet'] = $this->m_outlet->tampil_data()->result();
         $data['member'] = $this->m_user->tampil_data_member()->result();
         $data['user'] = $this->m_user->tampil_data();
+        $data['paket'] = $this->m_data->tampil_data_paket();
 		$this->load->view('transaksi/tambah',$data);
         // var_dump($data);
         // die;
@@ -28,6 +29,7 @@ class Transaksi extends CI_Controller {
             $id = $this->input->post('');
 			$id_outlet = $this->input->post('id_outlet');
             $id_paket = $this->input->post('id_paket');
+            $qty = $this->input->post('qty');
             $kode_invoice = $this->input->post('kode_invoice');
             $id_member = $this->input->post('id_member');
             $tgl = $this->input->post('tgl');
@@ -41,22 +43,22 @@ class Transaksi extends CI_Controller {
             $id_user = $this->input->post('id_user');
 			$data_trasnsaksi = array(
 				'id_outlet'=> $id_outlet,
+                'id_paket'=> 1,
 				'kode_invoice' => $kode_invoice,
                 'id_member' => $id_member,
                 'tgl' => $tgl,
                 'batas_waktu' => $batas_waktu,
                 'tgl_bayar' => $tgl_bayar,
                 'biaya_tambahan' => $biaya_tambahan,
+                'qty'=> $qty,
                 'diskon' => $diskon,
                 'pajak' => $pajak,
                 'status' => $status,
                 'dibayar' => $dibayar,
                 'id_user' => $id_user
 			);
-            $data_detail_transaksi = array(
-                'id_transaksi' => $id,
-                'paket' => $id_paket
-            );
+            // var_dump($data_trasnsaksi);
+            // die;
 			$this->m_data->tambah_transaksi($data_trasnsaksi);
 			redirect('transaksi');
 		}
@@ -76,7 +78,7 @@ class Transaksi extends CI_Controller {
     function detail_transaksi($id){
 	    $data['trans'] = $this->m_data->detail_transaksi($id);
         $this->load->view('transaksi/detail',$data);
-        var_dump($data);
-        die;
+        // var_dump($data);
+        // die;
     }
 }
