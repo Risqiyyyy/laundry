@@ -2,7 +2,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Admin</title>
+		<title>MY LAUNDRY</title>
 		<script src="https://unpkg.com/feather-icons"></script>
 		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 		<link rel="stylesheet" href="<?= base_url();?>/template/assets/css/bootstrap.min.css">

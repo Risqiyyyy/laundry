@@ -48,8 +48,20 @@ class User extends CI_Controller {
 		redirect('user');
 	}
 
-	function edit($id){
+	function update($id){
+			$nama = $this->input->post('nama');
+			$username = $this->input->post('username');
+			$password = $this->input->post('password');
+			$data_user = array(
+				'nama'=> $nama,
+				'username'=> $username,
+				'password'=>password_hash($password,PASSWORD_DEFAULT),
+			);
+        $this->db->set($data_user);
+        $this->db->where('id', $id);
+        $this->db->update('tb_user');
 		$this->load->view('user/edit');
+		redirect('user/edit');
 	}
 
 	function member(){

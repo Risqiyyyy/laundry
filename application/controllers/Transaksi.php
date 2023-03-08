@@ -43,7 +43,7 @@ class Transaksi extends CI_Controller {
             $id_user = $this->input->post('id_user');
 			$data_trasnsaksi = array(
 				'id_outlet'=> $id_outlet,
-                'id_paket'=> 1,
+                'id_paket'=> $id_paket,
 				'kode_invoice' => $kode_invoice,
                 'id_member' => $id_member,
                 'tgl' => $tgl,
@@ -53,7 +53,7 @@ class Transaksi extends CI_Controller {
                 'qty'=> $qty,
                 'diskon' => $diskon,
                 'pajak' => $pajak,
-                'status' => $status,
+                'status' => "baru",
                 'dibayar' => $dibayar,
                 'id_user' => $id_user
 			);
@@ -69,6 +69,42 @@ class Transaksi extends CI_Controller {
 		}
     }
 
+    function data_baru(){
+        $data['transaksi'] = $this->m_data->tampil_data_baru();
+        $data['outlet'] = $this->m_outlet->tampil_data()->result();
+        $data['member'] = $this->m_user->tampil_data_member()->result();
+        $data['user'] = $this->m_user->tampil_data();
+        $data['paket'] = $this->m_data->tampil_data_paket();
+		$this->load->view('transaksi/baru',$data);
+    }
+
+    function data_proses(){
+        $data['transaksi'] = $this->m_data->tampil_data_proses();
+        $data['outlet'] = $this->m_outlet->tampil_data()->result();
+        $data['member'] = $this->m_user->tampil_data_member()->result();
+        $data['user'] = $this->m_user->tampil_data();
+        $data['paket'] = $this->m_data->tampil_data_paket();
+		$this->load->view('transaksi/proses',$data);
+    }
+
+    function data_selesai(){
+        $data['transaksi'] = $this->m_data->tampil_data_selesai();
+        $data['outlet'] = $this->m_outlet->tampil_data()->result();
+        $data['member'] = $this->m_user->tampil_data_member()->result();
+        $data['user'] = $this->m_user->tampil_data();
+        $data['paket'] = $this->m_data->tampil_data_paket();
+		$this->load->view('transaksi/selesai',$data);
+    }
+
+    function data_diambil(){
+        $data['transaksi'] = $this->m_data->tampil_data_diambil();
+        $data['outlet'] = $this->m_outlet->tampil_data()->result();
+        $data['member'] = $this->m_user->tampil_data_member()->result();
+        $data['user'] = $this->m_user->tampil_data();
+        $data['paket'] = $this->m_data->tampil_data_paket();
+		$this->load->view('transaksi/diambil',$data);
+    }
+
     function hapus($id){
 		$where = array('id' => $id);
 		$this->m_data->hapus_transaksi($where,'tb_transaksi');
@@ -80,5 +116,44 @@ class Transaksi extends CI_Controller {
         $this->load->view('transaksi/detail',$data);
         // var_dump($data);
         // die;
+    }
+    public function proses_update($id)
+    {
+        $data = array(
+            'status' => "proses"
+            );
+        $this->db->set($data);
+        $this->db->where('id', $id);
+        $this->db->update('tb_transaksi');
+        redirect('transaksi/data_proses');
+    }
+    public function selesai_update($id)
+    {
+        $data = array(
+            'status' => "selesai"
+            );
+        $this->db->set($data);
+        $this->db->where('id', $id);
+        $this->db->update('tb_transaksi');
+        redirect('transaksi/data_proses');
+    }
+    public function diambil_update($id)
+    {
+        $data = array(
+            'status' => "diambil"
+            );
+            
+        $this->db->set($data);
+        $this->db->where('id', $id);
+        $this->db->update('tb_transaksi');
+        redirect('transaksi/data_proses');
+    }
+    function print(){
+        $data['transaksi'] = $this->m_data->tampil_data_transaksi();
+        $data['outlet'] = $this->m_outlet->tampil_data()->result();
+        $data['member'] = $this->m_user->tampil_data_member()->result();
+        $data['user'] = $this->m_user->tampil_data();
+        $data['paket'] = $this->m_data->tampil_data_paket();
+		$this->load->view('laporan',$data);
     }
 }
