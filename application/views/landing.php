@@ -84,7 +84,7 @@ https://templatemo.com/tm-584-pod-talk
 
                             <p class="text-white">Bersihkan pakaian anda secepat kilat bersama kami!</p>
 
-                            <a href="#section_2" class="btn custom-btn smoothscroll mt-3">Mulai Pesan Sekarang</a>
+                            <a href="#section_2" class="btn custom-btn smoothscroll mt-3">Mulai Pesan</a>
                         </div>
 
                         <div class="owl-carousel owl-theme">
