@@ -80,14 +80,19 @@ https://templatemo.com/tm-584-pod-talk
 
                     <div class="col-lg-12 col-12">
                         <div class="text-center mb-5 pb-2">
-                            <h1 class="text-white">Laundry XY Kilat</h1>
+                            <h1 class="text-white">Laundry XY Kilat Cepat</h1>
 
                             <p class="text-white">Bersihkan pakaian anda secepat kilat bersama kami!</p>
+<<<<<<< HEAD
                             <form action="landing/cek_invoice">
                             <input class="form-control text-center smoothscroll mt-3" type="text" placeholder="Masukan Kode Invoice">
                             <button class="btn custom-btn smoothscroll mt-3">Cek Pesanan</button>
                             </form>
                             <!-- <a href="#section_2" class="btn custom-btn smoothscroll mt-3">Mulai Pesan</a> -->
+=======
+
+                            <a href="#section_2" class="btn custom-btn smoothscroll mt-3">Mulai Pesan!</a>
+>>>>>>> 2055eaf3f6e5c98daf2b95106c68190be1890c0d
                         </div>
 
                         <div class="owl-carousel owl-theme">
