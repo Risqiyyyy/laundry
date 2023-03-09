@@ -5,8 +5,8 @@ class Outlet extends CI_Controller {
 
     function __construct(){
 		parent::__construct();
-		if ($this->session->userdata('role') != "admin" ) {
-            redirect('outlet');
+		if ($this->session->userdata('role') != "admin") {
+            redirect('auth');
         }
 		$this->load->model('m_outlet');
 	}
