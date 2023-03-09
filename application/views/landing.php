@@ -80,7 +80,7 @@ https://templatemo.com/tm-584-pod-talk
 
                     <div class="col-lg-12 col-12">
                         <div class="text-center mb-5 pb-2">
-                            <h1 class="text-white">Laundry XY Kilat</h1>
+                            <h1 class="text-white">Laundry XY Kilat Cepat</h1>
 
                             <p class="text-white">Bersihkan pakaian anda secepat kilat bersama kami!</p>
 
