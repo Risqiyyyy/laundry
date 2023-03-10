@@ -15,7 +15,8 @@ class Landing extends CI_Controller {
 		$this->load->view('landing');
 	}
 
-	function cek_invoice(){
-		$this->load->view('cek_invoice');
+	public function cek_invoice($kode_invoice = NULL){
+		$data['trans'] = $this->m_data->detail_invoice($kode_invoice);
+		$this->load->view('cek_invoice',$data);
 	}
 }

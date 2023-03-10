@@ -1,24 +1,31 @@
 <head>
-	<?php $this->load->view('_partials/head.php'); ?>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Print</title>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <link rel="stylesheet" href="<?= base_url();?>/template/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url();?>/template/assets/css/animate.css">
+    <link rel="stylesheet" href="<?= base_url();?>/template/assets/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?= base_url();?>/template/assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="<?= base_url();?>/template/assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url();?>/template/assets/css/styleku.css">
+
 </head>
-<?php $this->load->view('_partials/sidebar.php'); ?>
-<div class="page-wrapper">
+<div class="page">
 	<div class="content">
 		<div class="row">
 			<main>
 				<!-- detail -->
-
 				<div class="card">
 					<div class="card-body">
-						<div class="container mb-5 mt-3">
+						<div class="container mb-5">
 							<div class="row d-flex align-items-baseline">
 								<div class="col-xl-9">
 									<p style="color: #7e8d9f;font-size: 20px;">Invoice >> <strong>Code:
 											<?= $trans['kode_invoice']?></strong></p>
-								</div>
-								<div class="col-xl-3 float-end">
-									<a href="<?php echo base_url(); ?>transaksi/print/<?php echo $trans['id']; ?>" class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark" id="print"><i
-											class="fas fa-print text-primary"></i> Print</a>
 								</div>
 								<hr>
 							</div>
@@ -88,13 +95,13 @@
 									<div class="col-xl-8">
 									</div>
 									<div class="col-xl-3">
-										<ul class="list-unstyled">
-											<li class="text-muted ms-3"><span class="text-black me-4">Diskon </span>
+										<ul class="list-unstyled ">
+											<li class="text-muted ms-3"><span class="text-black me-4 " >Diskon </span>
 												-<?= $trans['diskon']?></li>
 											<li class="text-muted ms-3 mt-2"><span
 													class="text-black me-4">Pajak</span>-<?= $trans['pajak']?></li>
 										</ul>
-										<p class="text-black float-start"><span class="text-black me-3"> Total
+										<p class="text-black float-end"><span class="text-black me-3"> Total
 												Bayar</span><span
 												style="font-size: 25px;"><?= ($trans['qty'] * $trans['harga'] - $trans['diskon'] - $trans['pajak'] )?></span>
 										</p>
@@ -104,9 +111,6 @@
 								<div class="row">
 									<div class="col-xl-10">
 										<p>Thank you for your purchase</p>
-									</div>
-									<div class="col-xl-2">
-                                    <a class="btn btn-primary text-capitalize"  style="background-color:#60bdf3 ;" href="<?php echo base_url(); ?>transaksi/">Kembali</a>
 									</div>
 								</div>
 
@@ -123,4 +127,6 @@
 </div>
 </div>
 </div>
-<?php $this->load->view('_partials/end.php'); ?>
+<script>
+	window.print();
+</script>

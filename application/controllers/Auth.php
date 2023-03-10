@@ -38,12 +38,15 @@ class Auth extends CI_Controller {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
         $cek_user = $this->db->get_where('tb_user', ['username' => $username])->row_array();
+        // var_dump($cek_user);
+        // die;
         if ($cek_user) {
             if(password_verify($password, $cek_user['password'])){
                 $data_session = array(
                     'nama' => $username,
                     'status' => "login",
-                    'role' => $cek_user['role']
+                    'role' => $cek_user['role'],
+                    'id' => $cek_user['id']
                     );
                 $this->session->set_userdata($data_session);
                 redirect(base_url("dashboard"));

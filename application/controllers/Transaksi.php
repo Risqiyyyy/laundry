@@ -148,12 +148,17 @@ class Transaksi extends CI_Controller {
         $this->db->update('tb_transaksi');
         redirect('transaksi/data_proses');
     }
-    function print(){
-        $data['transaksi'] = $this->m_data->tampil_data_transaksi();
-        $data['outlet'] = $this->m_outlet->tampil_data()->result();
-        $data['member'] = $this->m_user->tampil_data_member()->result();
-        $data['user'] = $this->m_user->tampil_data();
-        $data['paket'] = $this->m_data->tampil_data_paket();
-		$this->load->view('laporan',$data);
+    // function print(){
+    //     $data['transaksi'] = $this->m_data->tampil_data_transaksi();
+    //     $data['outlet'] = $this->m_outlet->tampil_data()->result();
+    //     $data['member'] = $this->m_user->tampil_data_member()->result();
+    //     $data['user'] = $this->m_user->tampil_data();
+    //     $data['paket'] = $this->m_data->tampil_data_paket();
+	// 	$this->load->view('laporan',$data);
+    // }
+
+    function print($id){
+        $data['trans'] = $this->m_data->detail_transaksi($id);
+        $this->load->view('print',$data);
     }
 }

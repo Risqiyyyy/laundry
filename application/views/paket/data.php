@@ -15,7 +15,7 @@
 						<!-- modal -->
 						<!-- Button trigger modal -->
 						<button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-						Tambah User
+						Tambah Paket
 						</button>
 
 						<!-- Modal -->
