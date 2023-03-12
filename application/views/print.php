@@ -42,7 +42,7 @@
 
 								<div class="row">
 									<div class="col-xl-8">
-										<ul class="list-unstyled">
+										<ul class="list-unstyled float-start">
 											<li class="text-muted">Member : <span
 													style="color:#5d9fc5 ;"><?= $trans['nama_member']?></span></li>
 											<li class="text-muted">Outlet : <?= $trans['nama_outlet']?></li>
@@ -50,9 +50,8 @@
 											<li class="text-muted"><i class="fas fa-phone"></i> 123-456-789</li>
 										</ul>
 									</div>
-									<div class="col-xl-4">
-										<p class="text-muted">Invoice</p>
-										<ul class="list-unstyled">
+									<div class="col-xl-4 ">
+										<ul class="list-unstyled float-end">
 											<li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i>
 												<span class="fw-bold">Tanggal Transaksi: </span><?= $trans['tgl']?>
 											</li>
@@ -63,6 +62,11 @@
 												<span class="me-1 fw-bold">Status:</span><span
 													class="badge bg-warning text-black fw-bold">
 													<?= $trans['status']?></span>
+											</li>
+											<li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i>
+												<span class="me-1 fw-bold">Pembayaran:</span><span
+													class="badge bg-warning text-black fw-bold">
+													<?= $trans['dibayar']?></span>
 											</li>
 										</ul>
 									</div>

@@ -25,38 +25,24 @@ class Auth extends CI_Controller {
         $this->form_validation->set_rules('password', 'Password', 'required|trim');
 
         if ($this->form_validation->run() === false) {
-            $this->load->view('auth');
+            $this->load->view('auth/login');
         } else {
-            $this->aksi_login();
+            $this->proses_login();
         }
     }
- 
-	function aksi_login(){
-        if ($this->session->userdata('role') != null) {
-            redirect('dashboard');
-        }
-		$username = $this->input->post('username');
+    function proses_login(){
+        $username = $this->input->post('username');
 		$password = $this->input->post('password');
-        $cek_user = $this->db->get_where('tb_user', ['username' => $username])->row_array();
-        // var_dump($cek_user);
-        // die;
-        if ($cek_user) {
-            if(password_verify($password, $cek_user['password'])){
-                $data_session = array(
-                    'nama' => $username,
-                    'status' => "login",
-                    'role' => $cek_user['role'],
-                    'id' => $cek_user['id']
-                    );
-                $this->session->set_userdata($data_session);
-                redirect(base_url("dashboard"));
-            }else{
-                $this->session->set_flashdata('message', '<div class="alert alert-danger">Password atau username salah!</div>');
-                redirect('auth');
-            }
-        }
-		
-	}
+		if($this->m_login->login_user($username,$password))
+		{
+			redirect('dashboard');
+		}
+		else
+		{
+			$this->session->set_flashdata('error','Username & Password salah');
+			redirect('auth');
+		}
+    }
 
     function register(){
         if ($this->session->userdata('role') != null) {

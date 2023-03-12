@@ -55,8 +55,11 @@ https://templatemo.com/tm-584-pod-talk
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-lg-auto">
+                    <li class="nav-item">
+                            <a class="nav-link" href="<?= base_url('auth') ?>">Login</a>
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.html">Home</a>
+                            <a class="nav-link active" href="<?= base_url('/') ?>">Home</a>
                         </li>
 
                         <li class="nav-item">
@@ -82,9 +85,13 @@ https://templatemo.com/tm-584-pod-talk
                         <div class="text-center mb-5 pb-2">
                             <h1 class="text-white">Laundry XY Kilat Cepat</h1>
                             <p class="text-white">Bersihkan pakaian anda secepat kilat bersama kami!</p>
-                            <form action="landing/cek_invoice">
-                            <input class="form-control text-center smoothscroll mt-3" type="text" placeholder="Masukan Kode Invoice">
-                            <button class="btn custom-btn smoothscroll mt-3">Cek Pesanan</button>
+                            <form action="<?= base_url('landing/cek_invoice') ?>" methode="POST">
+                            <?php if(isset($_POST['cek_kode'])):  ?>
+                            <input class="form-control text-center smoothscroll mt-3" type="text" name="kode_invoice" placeholder="Masukan Kode Invoice" value="<?= $kode_invoice ?>">
+                            <?php else: ?>
+                                <input class="form-control text-center smoothscroll mt-3" type="text" placeholder="Masukan Kode Invoice" name="kode_invoice">
+                            <?php endif ?>
+                            <button type ="submit" name="cek_kode" class="btn custom-btn smoothscroll mt-3">Cek Pesanan</button>
                             </form>
                         </div>
 

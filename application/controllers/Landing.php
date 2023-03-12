@@ -6,8 +6,6 @@ class Landing extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('m_data');
-        $this->load->model('m_outlet');
-        $this->load->model('m_user');
 	}
 
 	public function index()
@@ -15,8 +13,14 @@ class Landing extends CI_Controller {
 		$this->load->view('landing');
 	}
 
-	public function cek_invoice($kode_invoice = NULL){
-		$data['trans'] = $this->m_data->detail_invoice($kode_invoice);
-		$this->load->view('cek_invoice',$data);
-	}
+	public function cek_invoice(){
+		if(!isset($_POST['cek_kode']))
+		{   
+			redirect('/');
+		}
+		else
+		{
+			$this->load->view('cek_invoice');
+		}
+    }
 }

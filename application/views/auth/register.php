@@ -8,7 +8,7 @@
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="<?= base_url();?>/assets/fonts/material-icon/css/material-design-iconic-font.min.css">
-
+    <script src="https://unpkg.com/feather-icons"></script>
     <!-- Main css -->
     <link rel="stylesheet" href="<?= base_url();?>/assets/css/style.css">
 </head>
@@ -20,8 +20,12 @@
         <section class="signup">
             <div class="container">
                 <div class="signup-content">
+                <div class="align-top">
+                <a type="submit" href="<?= base_url('/');?>" class="kembali"><i data-feather="arrow-left"></i></a>
+                        <figure><img src="<?= base_url();?>/assets/images/logo-laundry.png" alt="sing up image"></figure>
+                    </div>
                     <div class="signup-form">
-                        <h2 class="form-title">Sign up</h2>
+                        <h2 class="form-title">DAFTAR AKUN</h2>
                         <?= $this->session->flashdata('message') ?>
                         <form method="POST" class="register-form" id="register-form">
                         <div class="form-group">
@@ -40,20 +44,21 @@
                                 <?= form_error('password', '<small class="text-danger pl-2">', '</small>') ?>
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="sumbit" class="form-submit" value="Register"/>
+                                <input type="submit" name="sumbit" class="form-submit" value="Daftar"/>
+                                <a href="<?= site_url('auth');?>" class="signup-image-link">Sudah Punya Akun</a>
                             </div>
                         </form>
                     </div>
-                    <div class="signup-image">
-                        <figure><img src="<?= base_url();?>/assets/images/logo-laundry.png" alt="sing up image"></figure>
-                        <a href="<?= site_url('auth');?>" class="signup-image-link">I am already member</a>
-                    </div>
+                    
                 </div>
             </div>
         </section>
     </div>
 
     <!-- JS -->
+    <script>
+      feather.replace()
+    </script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->

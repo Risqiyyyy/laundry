@@ -17,7 +17,7 @@
 											<?= $trans['kode_invoice']?></strong></p>
 								</div>
 								<div class="col-xl-3 float-end">
-									<a href="<?php echo base_url(); ?>transaksi/print/<?php echo $trans['id']; ?>" class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark" id="print"><i
+									<a target="_blank" rel="noopener noreferrer" href="<?php echo base_url(); ?>transaksi/print/<?php echo $trans['id']; ?>" class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark" id="print"><i
 											class="fas fa-print text-primary"></i> Print</a>
 								</div>
 								<hr>
@@ -40,11 +40,10 @@
 													style="color:#5d9fc5 ;"><?= $trans['nama_member']?></span></li>
 											<li class="text-muted">Outlet : <?= $trans['nama_outlet']?></li>
 											<li class="text-muted">Nama Kasir : <?= $trans['nama_user']?></li>
-											<li class="text-muted"><i class="fas fa-phone"></i> 123-456-789</li>
+											<li class="text-muted"><i class="fas fa-phone"></i> <?= $trans['tlp']?></li>
 										</ul>
 									</div>
 									<div class="col-xl-4">
-										<p class="text-muted">Invoice</p>
 										<ul class="list-unstyled">
 											<li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i>
 												<span class="fw-bold">Tanggal Transaksi: </span><?= $trans['tgl']?>
@@ -56,6 +55,11 @@
 												<span class="me-1 fw-bold">Status:</span><span
 													class="badge bg-warning text-black fw-bold">
 													<?= $trans['status']?></span>
+											</li>
+											<li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i>
+												<span class="me-1 fw-bold">Pembayaran:</span><span
+													class="badge bg-warning text-black fw-bold">
+													<?= $trans['dibayar']?></span>
 											</li>
 										</ul>
 									</div>

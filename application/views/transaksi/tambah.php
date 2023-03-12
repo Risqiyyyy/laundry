@@ -17,17 +17,11 @@
 							<div class="card-body">
                             <form action="<?php echo base_url('transaksi/tambah'); ?>" method="POST">
 								<div class="row">
-									<div class="col-lg-3 col-sm-6 col-12">
-										<div class="form-group">
-											<label>Outlet</label>
-											<select class="form-control" name="id_outlet" required>
-                                                        <option value="">No Selected</option>
-                                                        <?php foreach($outlet as $row):?>
-                                                        <option value="<?php echo $row->id;?>">
-                                                            <?php echo $row->nama;?></option>
-                                                        <?php endforeach;?>
-                                                    </select>
-										</div>
+									<div class="col-lg-3 col-sm-6 col-12" hidden>
+                                    <div class="form-group">
+                                        <label clas="row">User</label>
+                                        <input type="text" value="<?= $this->session->userdata('id_outlet')?>" name="id_outlet" placeholder="<?= $this->session->userdata('id_outlet')?>">
+									    </div>
 									</div>
 									<div class="col-lg-3 col-sm-6 col-12">
 										<div class="form-group">
@@ -51,11 +45,11 @@
                                                     </select>
 										</div>
 									</div>
-									<div class="col-lg-3 col-sm-6 col-12">
+									<div class="col-lg-3 col-sm-6 col-12" hidden>
 										<div class="form-group">
                                         <label clas="row">Tanggal</label>
-                                                    <input type="date" class="form-control" name="tgl"
-                                                        placeholder="Tanggal">
+                                                    <input type="text" class="form-control" name="tgl"
+                                                        placeholder="<?php echo date('m/d/y');?>">
 										</div>
 									</div>
 									<div class="col-lg-3 col-sm-6 col-12">
@@ -128,10 +122,11 @@
                                         <input type="text" value="<?= $this->session->userdata('id')?>" name="id_user">
 									    </div>
                                     <div>
-                                    <button type="submit" class="btn btn-primary" name="submit">Input
+                                        <div>
+                                        <button type="submit" class="btn btn-primary row mt-4" name="submit">Input
                                             Data</button>
+                                        </div>
                                     </div>
-	
 								    </div>
                                 </form>
 							</div>
