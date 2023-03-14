@@ -9,12 +9,21 @@ class M_data extends CI_Model{
 		return $query->result();
 	}
 
+	function update_data_member($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);
+	}
+	
 	public function update($table, $data, $where)
     {
         $this->db->where($where)
                 ->update($table, $data);
             return TRUE;
     }
+
+	function edit_data_member($where,$table){		
+		return $this->db->get_where($table,$where);
+	}
 
     function tambah_paket($data)
 	{
@@ -46,15 +55,13 @@ class M_data extends CI_Model{
 		// return $query;
 	}
 
-	public function detail_invoice(){
-		$this->db->select('*, tb_outlet.id as outlet_id, tb_member.id as id_member,tb_user.id as user_id,tb_paket.id as paket_id,tb_member.nama as nama_member,tb_outlet.nama as nama_outlet,tb_user.nama nama_user');
-		$this->db->from('tb_transaksi'); 
+	public function detail_invoice($kode_invoice){
+		$this->db->select('*');
+		$this->db->join('tb_detail_transaksi', 'tb_transaksi.id = tb_detail_transaksi.id_transaksi');
 		$this->db->join('tb_outlet', 'tb_outlet.id = tb_transaksi.id_outlet');
 		$this->db->join('tb_member', 'tb_member.id = tb_transaksi.id_member');
-		$this->db->join('tb_user', 'tb_user.id = tb_transaksi.id_user');
-		$this->db->join('tb_detail_transaksi', 'tb_transaksi.id = tb_detail_transaksi.id_transaksi');
 		$this->db->join('tb_paket', 'tb_paket.id = tb_detail_transaksi.id_paket');
-		return $this->db->get_where('tb_transaksi',['kode_invoice => $kode_invoice'])->row_array();
+		return $this->db->get_where('tb_transaksi',['kode_invoice' => $kode_invoice])->row_array();
 		// $query = $this->db->get_where('tb_transaksi', array('id' => $id))->row_array();
 		// return $query;
 	}

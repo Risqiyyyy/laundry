@@ -37,7 +37,7 @@
 								</div>
 
 
-								<div class="row">
+								<!-- <div class="row">
 									<div class="col-xl-8">
 										<ul class="list-unstyled">
 											<li class="text-muted">Member : <span
@@ -103,7 +103,7 @@
 												style="font-size: 25px;"><?= ($trans['qty'] * $trans['harga'] - $trans['diskon'] - $trans['pajak'] )?></span>
 										</p>
 									</div>
-								</div>
+								</div> -->
 								<hr>
 								<div class="row">
 									<div class="col-xl-10">

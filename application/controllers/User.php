@@ -7,6 +7,7 @@ class User extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_user');
 		$this->load->model('m_outlet');
+		$this->load->model('m_data');
 	}
 
 	public function index()
@@ -62,6 +63,36 @@ class User extends CI_Controller {
         $this->db->update('tb_user');
 		$this->load->view('user/edit');
 		redirect('user/edit');
+	}
+	function edit_member($id){
+		$where = array('id' => $id);
+		$data['user'] = $this->m_data->edit_data_member($where,'tb_member')->result();
+		$this->load->view('user/member_edit',$data);
+	}
+
+	function edit_user($id){
+		$where = array('id' => $id);
+		$data['user'] = $this->m_data->edit_data_member($where,'tb_user')->result();
+		$this->load->view('user/user_edit',$data);
+	}
+
+	function update_member(){
+		$id = $this->input->post('id');
+		$nama = $this->input->post('nama');
+		$alamat = $this->input->post('alamat');
+		$tlp = $this->input->post('tlp');
+	 
+		$data = array(
+			'nama' => $nama,
+			'alamat' => $alamat,
+			'tlp' => $tlp
+		);
+	 
+		$where = array(
+			'id' => $id
+		);
+		$this->m_data->update_data_member($where,$data,'tb_member');
+		redirect('user/member');
 	}
 
 	function member(){

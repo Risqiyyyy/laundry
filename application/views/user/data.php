@@ -23,7 +23,7 @@
 						<div class="modal-dialog">
 							<div class="modal-content">
 							<div class="modal-header">
-								<h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+								<h1 class="modal-title fs-5" id="staticBackdropLabel">Tambah User</h1>
 								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<form action="<?php echo base_url('user/tambah'); ?>" method="post">
@@ -102,7 +102,7 @@
 												<td><?php echo $u->nama_outlet ?></td>
 												<td><?php echo $u->role ?></td>
 												<td>
-												<a class="btn btn-success" href="<?php echo base_url(); ?>user/edit/<?php echo $u->id_user; ?>">Edit</a>
+												<a class="btn btn-success" href="<?php echo base_url(); ?>user/edit_user/<?php echo $u->id_user; ?>">Edit</a>
 												<a class="btn btn-danger" href="<?php echo base_url(); ?>user/hapus/<?php echo $u->id_user; ?>">Hapus</a>
 												</td>
 											</tr>

@@ -85,13 +85,10 @@ https://templatemo.com/tm-584-pod-talk
                         <div class="text-center mb-5 pb-2">
                             <h1 class="text-white">Laundry XY Kilat Cepat</h1>
                             <p class="text-white">Bersihkan pakaian anda secepat kilat bersama kami!</p>
+                            <?= $this->session->flashdata('massage');?>
                             <form action="<?= base_url('landing/cek_invoice') ?>" methode="POST">
-                            <?php if(isset($_POST['cek_kode'])):  ?>
-                            <input class="form-control text-center smoothscroll mt-3" type="text" name="kode_invoice" placeholder="Masukan Kode Invoice" value="<?= $kode_invoice ?>">
-                            <?php else: ?>
-                                <input class="form-control text-center smoothscroll mt-3" type="text" placeholder="Masukan Kode Invoice" name="kode_invoice">
-                            <?php endif ?>
-                            <button type ="submit" name="cek_kode" class="btn custom-btn smoothscroll mt-3">Cek Pesanan</button>
+                            <input class="form-control text-center smoothscroll mt-3" type="text" name="kode_invoice" placeholder="Masukan Kode Invoice" >
+                            <button type="submit" name="submit" class="btn custom-btn smoothscroll mt-3">Cek Pesanan</button>
                             </form>
                         </div>
 

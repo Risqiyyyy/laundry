@@ -11,26 +11,18 @@
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Data Laporan berdasarkan outlet</li>
                     </ol>
-					<!-- crrd -->
+					<!-- crard -->
 					<div class="row">
+					<?php foreach ($outlet as $o) { ?>
 					<div class="col-sm-6">
 						<div class="card">
 						<div class="card-body">
-							<h5 class="card-title">Special title treatment</h5>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
-						</div>
-						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="card">
-						<div class="card-body">
-							<h5 class="card-title">Special title treatment</h5>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							<h5 class="card-title"><td><?php echo $o->nama ?></h5>
 							<a href="#" class="btn btn-primary">Lihat data</a>
 						</div>
 						</div>
 					</div>
+					<?php }?>
 					</div>
 					<!-- end card -->
                 </div>
