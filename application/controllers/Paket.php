@@ -14,6 +14,7 @@ class Paket extends CI_Controller {
 
 	public function index()
 	{
+		$data['outlet'] = $this->m_outlet->tampil_data()->result();
         $data['paket'] = $this->m_data->tampil_data_paket();
 		$this->load->view('paket/data',$data);
 		// var_dump($data);
@@ -42,6 +43,29 @@ class Paket extends CI_Controller {
 			$this->load->view('paket/data',$data);
 		}
     }
+	function edit_paket($id){
+		$where = array('id' => $id);
+		$data['paket'] = $this->m_data->edit_data_paket($where,'tb_paket')->result();
+		$this->load->view('paket/edit_paket',$data);
+	}
+
+	function update_paket(){
+		$id = $this->input->post('id');
+		$jenis = $this->input->post('jenis');
+		$nama_paket = $this->input->post('nama_paket');	 
+		$harga = $this->input->post('harga');	 
+		$data = array(
+			'jenis' => $jenis,
+			'nama_paket' => $nama_paket,
+			'harga' => $harga
+		);
+	 
+		$where = array(
+			'id' => $id
+		);
+		$this->m_data->update_data_paket($where,$data,'tb_paket');
+		redirect('paket');
+	}
 
     function hapus($id){
 		$where = array('id' => $id);

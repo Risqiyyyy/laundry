@@ -36,8 +36,14 @@
 					</ul>
 				</li>
 				<?php }?>
+				<?php if($this->session->userdata('role') == "admin" || $this->session->userdata('role') == "owner"){ ?>
 				<li class=""><a href="<?= base_url('laporan')?>"><i data-feather="book"></i><span>Laporan</span></a>
 				</li>
+				<?php }?>
+				<?php if ($this->session->userdata('role') == "kasir") {?>
+				<li class=""><a href="<?= base_url('laporan/laporan_kasir')?>"><i data-feather="book"></i><span>Laporan</span></a>
+				</li>
+				<?php }?>
 			</ul>
 		</div>
 	</div>

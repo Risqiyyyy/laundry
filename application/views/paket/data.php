@@ -33,7 +33,7 @@
                                                 <label>Outlet</label>
 												<select class="form-control" name="id_outlet">
                                                     <option value="">No Selected</option>
-														<?php foreach($paket as $row){?>
+														<?php foreach($outlet as $row){?>
 														<option value="<?php echo $row->id;?>">
 															<?php echo $row->nama;?></option>
 														<?php }?>
@@ -96,7 +96,7 @@
 												<td><?php echo $u->nama_paket ?></td>
                                                 <td><?php echo $u->harga ?></td>
 												<td>
-												<a class="btn btn-success" href="<?php echo base_url(); ?>paket/edit/<?php echo $u->id; ?>">Edit</a>
+												<a class="btn btn-success" href="<?php echo base_url(); ?>paket/edit_paket/<?php echo $u->id; ?>">Edit</a>
 												<a class="btn btn-danger" href="<?php echo base_url(); ?>paket/hapus/<?php echo $u->id; ?>">Hapus</a>
 												</td>
 											</tr>

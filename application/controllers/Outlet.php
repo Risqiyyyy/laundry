@@ -38,6 +38,31 @@ class Outlet extends CI_Controller {
 		}
     }
 
+	function edit_outlet($id){
+		$where = array('id' => $id);
+		$data['outlet'] = $this->m_outlet->edit_data($where,'tb_outlet')->result();
+		$this->load->view('outlet/edit',$data);
+	}
+	function update_outlet(){
+		$id = $this->input->post('id');
+		$nama = $this->input->post('nama');
+		$alamat = $this->input->post('alamat');
+		$tlp = $this->input->post('tlp');
+	 
+		$data = array(
+			'nama' => $nama,
+			'alamat' => $alamat,
+			'tlp' => $tlp
+		);
+	 
+		$where = array(
+			'id' => $id
+		);
+		$this->m_outlet->update_data($where,$data,'tb_outlet');
+		redirect('outlet');
+	}
+
+
     function hapus($id){
 		$where = array('id' => $id);
 		$this->m_outlet->hapus_data($where,'tb_outlet');

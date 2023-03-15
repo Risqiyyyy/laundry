@@ -22,7 +22,7 @@
 							<div class="row d-flex align-items-baseline">
 								<div class="col-xl-9">
 									<p style="color: #7e8d9f;font-size: 20px;">Invoice >> <strong>Code:
-											<?= $trans['kode_invoice']?></strong></p>
+											<?= $transaksi['kode_invoice']?></strong></p>
 								</div>
 								<hr>
 							</div>

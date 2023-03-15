@@ -8,27 +8,27 @@
 			<!-- modal -->
 			<main>
 				<div class="container-fluid">
-					<h1 class="mt-4">EDIT OUTLET</h1>
+					<h1 class="mt-4">EDIT PAKET</h1>
 					<ol class="breadcrumb mb-4">
-						<li class="breadcrumb-item active">Edit Data Outlet</li>
+						<li class="breadcrumb-item active">Edit Data Paket</li>
 					</ol>
 					<!-- modal -->
-                    <!-- <?php foreach($outlet as $u){ ?> -->
-                    <form action="<?= base_url('outlet/update_outlet'); ?>" method="post">
+                    <?php foreach($paket as $u){ ?>
+                    <form action="<?= base_url('paket/update_paket'); ?>" method="post">
 									<div class="modal-body">
 										<div class="form-row">
 											<div class="form-group">
-												<label>Nama Outlet</label>
+												<label>Jenis Paket</label>
                                                 <input type="hidden" name="id" value="<?php echo $u->id ?>">
-												<input type="text" class="form-control" name="nama" value="<?php echo $u->nama ?>">
+												<input type="text" class="form-control" name="jenis" value="<?php echo $u->jenis ?>">
 											</div>
 											<div class="form-group">
-												<label>Alamat</label>
-												<input type="text" class="form-control" name="alamat" value="<?php echo $u->alamat ?>">
+												<label>Nama Paket</label>
+												<input type="text" class="form-control" name="nama_paket" value="<?php echo $u->nama_paket ?>">
 											</div>
 											<div class="form-group">
-												<label>Nomor Telpon</label>
-												<input type="text" class="form-control" name="tlp" value="<?php echo $u->tlp ?>">
+												<label>Harga PAKET</label>
+												<input type="text" class="form-control" name="harga" value="<?php echo $u->harga?>">
 											</div>
 
 											<div class="modal-footer">
@@ -39,7 +39,7 @@
 										</div>
 									</div>
 								</form>
-                                <!-- <?php }?> -->
+                                <?php }?>
 
 				</div>
 			</main>

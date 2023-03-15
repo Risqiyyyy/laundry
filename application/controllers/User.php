@@ -76,6 +76,22 @@ class User extends CI_Controller {
 		$this->load->view('user/user_edit',$data);
 	}
 
+	function update_user(){
+		$id = $this->input->post('id');
+		$nama = $this->input->post('nama');
+		$username = $this->input->post('username');	 
+		$data = array(
+			'nama' => $nama,
+			'username' => $username
+		);
+	 
+		$where = array(
+			'id' => $id
+		);
+		$this->m_data->update_data_member($where,$data,'tb_user');
+		redirect('user');
+	}
+
 	function update_member(){
 		$id = $this->input->post('id');
 		$nama = $this->input->post('nama');

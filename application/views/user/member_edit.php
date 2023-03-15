@@ -32,10 +32,9 @@
 											</div>
 
 											<div class="modal-footer">
-												<button type="button" class="btn btn-secondary"
-													data-bs-dismiss="modal">Close</button>
 												<button type="submit" class="btn btn-primary">Update
 													Data</button>
+													<a class="btn btn-danger" href="<?php echo base_url('user/member'); ?>">Kembali</a>
 											</div>
 										</div>
 									</div>

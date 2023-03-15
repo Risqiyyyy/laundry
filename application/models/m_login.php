@@ -17,6 +17,7 @@ class M_login extends CI_Model{
 				$this->session->set_userdata('is_login',TRUE);
 				$this->session->set_userdata('role',$data_user->role);
 				$this->session->set_userdata('id_outlet',$data_user->id_outlet);
+				$this->session->set_userdata('id',$data_user->id);
                 return TRUE;
             } else {
                 return FALSE;

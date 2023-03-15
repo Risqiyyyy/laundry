@@ -17,10 +17,10 @@
 							<div class="card-body">
                             <form action="<?php echo base_url('transaksi/tambah'); ?>" method="POST">
 								<div class="row">
-									<div class="col-lg-3 col-sm-6 col-12" hidden>
+									<div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label clas="row">User</label>
-                                        <input type="text" value="<?= $this->session->userdata('id_outlet')?>" name="id_outlet" placeholder="<?= $this->session->userdata('id_outlet')?>">
+                                        <label clas="row">id_outlet</label>
+                                        <input type="text" value="<?= $this->session->userdata('id_outlet')?>" name="id_outlet" placeholder="<?= $this->session->userdata('id_outlet')?>" readonly>
 									    </div>
 									</div>
 									<div class="col-lg-3 col-sm-6 col-12">
@@ -45,11 +45,11 @@
                                                     </select>
 										</div>
 									</div>
-									<div class="col-lg-3 col-sm-6 col-12" hidden>
+									<div class="col-lg-3 col-sm-6 col-12">
 										<div class="form-group">
                                         <label clas="row">Tanggal</label>
                                                     <input type="text" class="form-control" name="tgl"
-                                                        placeholder="<?php echo date('m/d/y');?>">
+                                                        placeholder="<?php echo date('m/d/y');?>" readonly>
 										</div>
 									</div>
 									<div class="col-lg-3 col-sm-6 col-12">
@@ -108,7 +108,7 @@
 									</div>
                                     <div class="col-lg-3 col-sm-6 col-12">
 										<div class="form-group">
-                                        <label clas="row">Bayar</label>
+                                        <label clas="row">Status Pembayaran</label>
                                                     <select class="form-control" name="dibayar" required>
                                                         <option>No Selected</option>
                                                         <option value="dibayar">Dibayar</option>
@@ -117,15 +117,13 @@
                                          </div>
 									</div>
                                     <div class="col-lg-3 col-sm-6 col-12">
-										<div class="form-group" hidden>
+										<div class="form-group">
                                         <label clas="row">User</label>
-                                        <input type="text" value="<?= $this->session->userdata('id')?>" name="id_user">
+                                        <input type="text" value="<?= $this->session->userdata('id')?>" name="id_user" placeholder="<?= $this->session->userdata('role')?>"  readonly>
 									    </div>
                                     <div>
-                                        <div>
-                                        <button type="submit" class="btn btn-primary row mt-4" name="submit">Input
+                                        <button type="submit" class="btn btn-primary" name="submit">Input
                                             Data</button>
-                                        </div>
                                     </div>
 								    </div>
                                 </form>

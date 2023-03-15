@@ -18,8 +18,8 @@ class Landing extends CI_Controller {
 	public function cek_invoice(){
 	if(isset($_POST['submit']))
 	{   
-		$nama = $this->input->post('kode_invoice');
-		$data['transaksi'] = $this->m_data->detail_invoice($kode_invoice);
+		$kode_invoice = $this->input->post('kode_invoice');
+        $data['transaksi'] = $this->m_data->invoice($kode_invoice, 'tb_transaksi')->row_array();
 		redirect('cek_invoice',$data);
 	}
 	else
