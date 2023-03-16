@@ -15,6 +15,11 @@ class M_outlet extends CI_Model{
 	function data_outlet($where,$table){		
 		return $this->db->get_where($table,$where);
 	}
+
+	function data_laporan_kasir($where,$table){
+		return $this->db->get_where($table,$where);
+	}
+
 	function tampil_data_transaksi($where,$table){		
 		return $this->db->get_where($table,$where);
 	}

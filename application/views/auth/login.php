@@ -41,8 +41,8 @@
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="submit" class="form-submit" value="Masuk"/>
-                                <a href="<?= site_url('auth/register');?>" class="signup-image-link">Membuat Akun</a>
-                            </div>
+                                <!-- <a href="<?= site_url('auth/register');?>" class="signup-image-link">Membuat Akun</a>
+                            </div> -->
                         </form>
                     </div>
                 </div>

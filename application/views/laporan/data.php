@@ -57,8 +57,6 @@
                                                     <td><?php echo $u->dibayar ?></td>
                                                     <td><?php echo $u->id_user ?></td>
                                                     <td>
-                                                        <a class="btn btn-primary"
-                                                            href="<?php echo base_url(); ?>GeneratePdfController/">Cetak</a>
                                                         <a class="btn btn-success"
                                                             href="<?php echo base_url(); ?>transaksi/detail_transaksi/<?php echo $u->id; ?>">Detail</a>
                                                     </td>

@@ -17,7 +17,16 @@ class Laporan extends CI_Controller {
 
 	public function laporan_kasir()
 	{
-		$this->load->view('laporan/laporan_kasir');
+		$where = array (
+			'id_user' => $this->session->userdata('id')
+		);
+		$data['trans'] = $this->m_outlet->data_laporan_kasir($where,'tb_transaksi')->result();
+        // $data['transaksi'] = $this->m_data->tampil_data_transaksi();
+        $data['outlet'] = $this->m_outlet->tampil_data()->result();
+        $data['member'] = $this->m_user->tampil_data_member()->result();
+        $data['user'] = $this->m_user->tampil_data();
+        $data['paket'] = $this->m_data->tampil_data_paket();
+		$this->load->view('laporan/laporan_kasir',$data);
 	}
 
 	function data_outlet($id){

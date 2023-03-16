@@ -12,12 +12,15 @@ class M_login extends CI_Model{
         {
             $data_user = $query->row();
             if (password_verify($password, $data_user->password)) {
-                $this->session->set_userdata('username',$username);
-				$this->session->set_userdata('nama',$data_user->nama);
-				$this->session->set_userdata('is_login',TRUE);
-				$this->session->set_userdata('role',$data_user->role);
-				$this->session->set_userdata('id_outlet',$data_user->id_outlet);
-				$this->session->set_userdata('id',$data_user->id);
+				$data_session = array(
+					'username' => $username,
+					'nama' => $data_user->nama,
+					'is_login' => True,
+					'role' => $data_user->role,
+					'id_outlet' => $data_user->id_outlet,
+					'id' => $data_user->id
+				);				
+				$this->session->set_userdata($data_session);
                 return TRUE;
             } else {
                 return FALSE;

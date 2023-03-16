@@ -41,7 +41,7 @@
 				</li>
 				<?php }?>
 				<?php if ($this->session->userdata('role') == "kasir") {?>
-				<li class=""><a href="<?= base_url('laporan/laporan_kasir')?>"><i data-feather="book"></i><span>Laporan</span></a>
+				<li class=""><a href="<?= base_url('laporan/laporan_kasir/')?><?= $this->session->userdata('id')?>"><i data-feather="book"></i><span>Laporan</span></a>
 				</li>
 				<?php }?>
 			</ul>
