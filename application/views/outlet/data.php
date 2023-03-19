@@ -80,8 +80,8 @@
 												<td><?php echo $u->alamat ?></td>
 												<td><?php echo $u->tlp ?></td>
 												<td>
-												<a class="btn btn-success" href="<?php echo base_url(); ?>outlet/edit_outlet/<?php echo $u->id; ?>">Edit</a>
-												<a class="btn btn-danger" href="<?php echo base_url(); ?>outlet/hapus/<?php echo $u->id; ?>">Hapus</a>
+												<a href="<?php echo base_url(); ?>outlet/edit_outlet/<?php echo $u->id; ?>"><i data-feather="edit"></i></a>
+												<a href="<?php echo base_url(); ?>outlet/hapus/<?php echo $u->id; ?>"><i data-feather="trash-2"></i></a>
 												</td>
 											</tr>
 										</tbody>

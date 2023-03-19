@@ -96,8 +96,8 @@
 												<td><?php echo $u->nama_paket ?></td>
                                                 <td><?php echo $u->harga ?></td>
 												<td>
-												<a class="btn btn-success" href="<?php echo base_url(); ?>paket/edit_paket/<?php echo $u->id; ?>">Edit</a>
-												<a class="btn btn-danger" href="<?php echo base_url(); ?>paket/hapus/<?php echo $u->id; ?>">Hapus</a>
+												<a href="<?php echo base_url(); ?>paket/edit_paket/<?php echo $u->id; ?>"><i data-feather="edit"></i></a>
+												<a href="<?php echo base_url(); ?>paket/hapus/<?php echo $u->id; ?>"><i data-feather="trash-2"></i></a>
 												</td>
 											</tr>
 										</tbody>

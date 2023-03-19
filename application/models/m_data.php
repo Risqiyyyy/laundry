@@ -25,8 +25,12 @@ class M_data extends CI_Model{
 		return $this->db->get_where($table,$where);
 	}
 
-	function invoice($where,$table){		
-		return $this->db->get_where($table,$where);
+	function invoice($kode_invoice){		
+		$this->db->select('tb_transaksi.*');
+		$this->db->from('tb_transaksi');
+		$this->db->where('kode_invoice =',$kode_invoice);
+		$query = $this->db->get();
+		return $query->row_array();
 	}
 
 	function edit_data_paket($where,$table){		

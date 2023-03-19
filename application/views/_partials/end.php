@@ -10,6 +10,9 @@
 		<script src="<?= base_url();?>/template/assets/plugins/apexchart/apexcharts.min.js"></script>
 		<script src="<?= base_url();?>/template/assets/plugins/apexchart/chart-data.js"></script>
 		<script src="<?= base_url();?>/template/assets/js/script.js"></script>
+		<script>
+      feather.replace()
+    </script>
 	</body>
 
 	</html>

@@ -102,8 +102,8 @@
 												<td><?php echo $u->nama_outlet ?></td>
 												<td><?php echo $u->role ?></td>
 												<td>
-												<a class="btn btn-success" href="<?php echo base_url(); ?>user/edit_user/<?php echo $u->id_user; ?>">Edit</a>
-												<a class="btn btn-danger" href="<?php echo base_url(); ?>user/hapus/<?php echo $u->id_user; ?>">Hapus</a>
+												<a href="<?php echo base_url(); ?>user/edit_user/<?php echo $u->id_user; ?>"><i data-feather="edit"></i></a>
+												<a href="<?php echo base_url(); ?>user/hapus/<?php echo $u->id_user; ?>"><i data-feather="trash-2"></i></a>
 												</td>
 											</tr>
 										</tbody>

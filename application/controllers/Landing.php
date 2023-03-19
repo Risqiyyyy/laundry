@@ -16,16 +16,16 @@ class Landing extends CI_Controller {
 	}
 
 	public function cek_invoice(){
-	if(isset($_POST['submit']))
-	{   
-		$kode_invoice = $this->input->post('kode_invoice');
-        $data['transaksi'] = $this->m_data->invoice($kode_invoice, 'tb_transaksi')->row_array();
-		redirect('cek_invoice',$data);
-	}
-	else
-	{
+		$kode_invoice = $this->input->post_get('kode_invoice', TRUE);
+		if($kode_invoice){
+			$data['trans'] = $this->m_data->invoice($kode_invoice);
+			$this->load->view('cek_invoice',$data);
+		}elseif($kode_invoice = NULL){
+			$this->session->set_flashdata('massage', 'kode invoice tidak Valid');
+			$this->load->view('landing');
+		}else{
 		$this->session->set_flashdata('massage', 'kode invoice tidak ada');
 		$this->load->view('landing');
-	}
+		}
 	}
 }

@@ -149,10 +149,8 @@
 													<td><?php echo $u->jenis_kelamin ?></td>
 													<td><?php echo $u->tlp ?></td>
 													<td>
-														<a class="btn btn-success" id="edit"
-															href="<?php echo base_url(); ?>user/edit_member/<?php echo $u->id; ?>" >Edit</a>
-														<a class="btn btn-danger"
-															href="<?php echo base_url(); ?>user/hapus/<?php echo $u->id; ?>">Hapus</a>
+														<a href="<?php echo base_url(); ?>user/edit_member/<?php echo $u->id; ?>" ><i data-feather="edit"></i></a>
+														<a href="<?php echo base_url(); ?>user/hapus/<?php echo $u->id; ?>"><i data-feather="trash-2"></i></a>
 													</td>
 												</tr>
 											</tbody>

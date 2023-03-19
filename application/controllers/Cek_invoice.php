@@ -12,6 +12,8 @@ class Cek_invoice extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('cek_invoice');
+		$kode_invoice = $this->input->post_get('kode_invoice');
+		$data['trans'] = $this->m_data->invoice($kode_invoice);
+		$this->load->view('cek_invoice',$data);
 	}
 }

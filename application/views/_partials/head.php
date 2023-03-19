@@ -12,6 +12,9 @@
 		<link rel="stylesheet" href="<?= base_url();?>/template/assets/plugins/fontawesome/css/all.min.css">
 		<link rel="stylesheet" href="<?= base_url();?>/template/assets/css/styleku.css">
 
+		<!-- icon -->
+		<script src="https://unpkg.com/feather-icons"></script>
+
 	</head>
 
 	<body>

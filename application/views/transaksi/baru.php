@@ -68,9 +68,8 @@
                                                     <td><?php echo $u->dibayar ?></td>
                                                     <td><?php echo $u->nama_user ?></td>
                                                     <td>
-                                                    <a href="<?= site_url('transaksi/proses_update/'.$u->transaksi_id) ?>" class="btn btn-info">Proses</a>
-                                                        <a class="btn btn-success"
-                                                            href="<?php echo base_url(); ?>transaksi/detail_transaksi/<?php echo $u->transaksi_id; ?>">Detail</a>
+                                                    <a href="<?= site_url('transaksi/proses_update/'.$u->transaksi_id) ?>" ><i data-feather="loader"></i></a>
+                                                        <a href="<?php echo base_url(); ?>transaksi/detail_transaksi/<?php echo $u->transaksi_id; ?>"><i data-feather="eye"></i></a>
                                                     </td>
                                                 </tr>
                                                 <?php }?>
