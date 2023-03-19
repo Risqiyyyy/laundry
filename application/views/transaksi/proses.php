@@ -44,9 +44,9 @@
 										foreach($transaksi as $u){
 										?>
                                                     <td><?php echo $no++ ?></td>
-                                                    <td><?php echo $u->nama_outlet ?></td>
+                                                    <td><?php echo $u->id_outlet ?></td>
                                                     <td><?php echo $u->kode_invoice ?></td>
-                                                    <td><?php echo $u->nama_member ?></td>
+                                                    <td><?php echo $u->id_member ?></td>
                                                     <td><?php echo $u->tgl ?></td>
                                                     <td><?php echo $u->batas_waktu ?></td>
                                                     <td><?php echo $u->tgl_bayar ?></td>
@@ -55,11 +55,11 @@
                                                     <td><?php echo $u->pajak ?></td>
                                                     <td><?php echo $u->status ?></td>
                                                     <td><?php echo $u->dibayar ?></td>
-                                                    <td><?php echo $u->nama_user ?></td>
+                                                    <td><?php echo $u->id_user ?></td>
                                                     <td>
-                                                    <a href="<?= site_url('transaksi/selesai_update/'.$u->transaksi_id) ?>"><i data-feather="check"></i></a>
+                                                    <a href="<?= site_url('transaksi/selesai_update/'.$u->id) ?>"><i data-feather="check"></i></a>
                                                         <a
-                                                            href="<?php echo base_url(); ?>transaksi/detail_transaksi/<?php echo $u->transaksi_id; ?>"><i data-feather="eye"></i></a>
+                                                            href="<?php echo base_url(); ?>transaksi/detail_transaksi/<?php echo $u->id; ?>"><i data-feather="eye"></i></a>
                                                     </td>
                                                 </tr>
                                                 <?php }?>

@@ -32,15 +32,21 @@ class M_login extends CI_Model{
         }
 	}
 	
-	function register($nama,$username,$password,$id_outlet,$akses)
+	function register($nama,$username,$password,$id_outlet,$akses,$alamat,$tlp)
 	{
 		$data_user = array(
 			'nama'=>$nama,
 			'username'=>$username,
 			'password'=>password_hash($password,PASSWORD_DEFAULT),
-            'id_outlet'=> 1,
-			'role'=> "admin"
+            'id_outlet'=> $id_outlet,
+			'role'=> "member"
+		);
+		$data_member = array(
+			'nama' => $nama,
+			'alamat' => $alamat,
+			'tlp' => $tlp
 		);
 		$this->db->insert('tb_user',$data_user);
+		$this->db->insert('tb_member',$data_member);
 	}
 }

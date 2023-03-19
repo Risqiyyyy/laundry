@@ -77,7 +77,7 @@
 										<thead>
 											<tr>
 												<th>NO</th>
-												<th>Outlet</th>
+												<!-- <th>Outlet</th> -->
 												<th>Jenis</th>
 												<th>Nama Paket</th>
                                                 <th>Harga</th>
@@ -91,7 +91,7 @@
 										<tbody>
 											<tr>
 												<td><?php echo $no++ ?></td>
-												<td><?php echo $u->nama ?></td>
+												<!-- <td><?php echo $u->nama ?></td> -->
 												<td><?php echo $u->jenis ?></td>
 												<td><?php echo $u->nama_paket ?></td>
                                                 <td><?php echo $u->harga ?></td>

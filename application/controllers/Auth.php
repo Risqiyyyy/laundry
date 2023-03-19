@@ -69,7 +69,9 @@ class Auth extends CI_Controller {
 		$password = $this->input->post('password');
         $id_outlet = $this->input->post('id_outlet');
         $role = $this->input->post('role');
-		    $this->m_login->register($nama,$username,$password,$id_outlet,$role);
+        $alamat = $this->input->post('alamat');
+        $tlp = $this->input->post('tlp');
+		    $this->m_login->register($nama,$username,$password,$id_outlet,$role,$alamat,$tlp);
             $this->session->set_flashdata('message', '<div class="alert alert-info">Data Berhasil Ditambahkan</div>');
 			redirect(base_url("auth/register"));
         }

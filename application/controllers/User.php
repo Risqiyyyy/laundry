@@ -117,6 +117,7 @@ class User extends CI_Controller {
 			$this->load->view('user/member',$data);
 		}
 	}
+	
 	function tambah_member(){
 		if(isset($_POST['submit']))
 		{   

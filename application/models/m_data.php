@@ -97,13 +97,14 @@ class M_data extends CI_Model{
 		return $query->result();
 	}
 
-	function tampil_data_baru(){
+	function tampil_data_baru($id){
 		$this->db->select('*,tb_transaksi.id as transaksi_id, tb_outlet.id as outlet_id, tb_member.nama as nama_member,tb_user.nama as nama_user,tb_outlet.nama as nama_outlet');
 		$this->db->from('tb_transaksi'); 
 		$this->db->join('tb_outlet', 'tb_outlet.id = tb_transaksi.id_outlet');
 		$this->db->join('tb_member', 'tb_member.id = tb_transaksi.id_member');
 		$this->db->join('tb_user', 'tb_user.id = tb_transaksi.id_user');
 		$this->db->where('tb_transaksi.status = "baru"');
+		$this->db->where('tb_transaksi.id', $id);
 		$query = $this->db->get();
 		return $query->result();
 	}

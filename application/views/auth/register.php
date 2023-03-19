@@ -30,7 +30,7 @@
                         <form method="POST" class="register-form" id="register-form">
                         <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="nama" id="name" placeholder="Your Name"/>
+                                <input type="text" name="nama" id="name" placeholder="Nama Lengkap"/>
                                 <?= form_error('nama', '<small class="text-danger pl-2">', '</small>') ?>
                             </div>
                             <div class="form-group">
@@ -42,6 +42,16 @@
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="password" id="pass" placeholder="Password"/>
                                 <?= form_error('password', '<small class="text-danger pl-2">', '</small>') ?>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="zmdi zmdi-place material-icons-name"></i></label>
+                                <input type="text" name="alamat" placeholder="Alamat" />
+                                <?= form_error('alamat', '<small class="text-danger pl-2">', '</small>') ?>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="zmdi zmdi-place material-icons-name"></i></label>
+                                <input type="text" name="tlp" placeholder="No Telpon" />
+                                <?= form_error('tlp', '<small class="text-danger pl-2">', '</small>') ?>
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="sumbit" class="form-submit" value="Daftar"/>

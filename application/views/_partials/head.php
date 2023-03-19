@@ -52,9 +52,6 @@
 										<h5><?= $this->session->userdata('role')?></h5>
 									</div>
 								</div>
-								<hr class="m-0"><a class="dropdown-item" href="profile.html"><i class="me-2"
-										data-feather="user"></i>My Profile</a><a class="dropdown-item"
-									href="generalsettings.html"><i class="me-2" data-feather="settings"></i>Settings</a>
 								<hr class="m-0"><a class="dropdown-item logout pb-0" href="<?php echo base_url('auth/logout'); ?>"><img
 										src="<?= base_url();?>/template/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout</a>
 							</div>
@@ -63,8 +60,7 @@
 				</ul>
 				<div class="dropdown mobile-user-menu"><a href="javascript:void(0);" class="nav-link dropdown-toggle"
 						data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-					<div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="profile.html">My
-							Profile</a><a class="dropdown-item" href="generalsettings.html">Settings</a><a
+					<div class="dropdown-menu dropdown-menu-right"><a
 							class="dropdown-item" href="<?php echo base_url('auth/logout'); ?>">Logout</a></div>
 				</div>
 			</div>

@@ -70,7 +70,11 @@ class Transaksi extends CI_Controller {
     }
 
     function data_baru(){
-        $data['transaksi'] = $this->m_data->tampil_data_baru();
+		$where = array (
+			'id_user' => $this->session->userdata('id'),
+            'status' => "baru"
+		);
+		$data['transaksi'] = $this->m_outlet->data_laporan_kasir($where,'tb_transaksi')->result();
         $data['outlet'] = $this->m_outlet->tampil_data()->result();
         $data['member'] = $this->m_user->tampil_data_member()->result();
         $data['user'] = $this->m_user->tampil_data();
@@ -79,7 +83,11 @@ class Transaksi extends CI_Controller {
     }
 
     function data_proses(){
-        $data['transaksi'] = $this->m_data->tampil_data_proses();
+        $where = array (
+			'id_user' => $this->session->userdata('id'),
+            'status' => "proses"
+		);
+		$data['transaksi'] = $this->m_outlet->data_laporan_kasir($where,'tb_transaksi')->result();
         $data['outlet'] = $this->m_outlet->tampil_data()->result();
         $data['member'] = $this->m_user->tampil_data_member()->result();
         $data['user'] = $this->m_user->tampil_data();
@@ -88,7 +96,11 @@ class Transaksi extends CI_Controller {
     }
 
     function data_selesai(){
-        $data['transaksi'] = $this->m_data->tampil_data_selesai();
+        $where = array (
+			'id_user' => $this->session->userdata('id'),
+            'status' => "selesai"
+		);
+		$data['transaksi'] = $this->m_outlet->data_laporan_kasir($where,'tb_transaksi')->result();
         $data['outlet'] = $this->m_outlet->tampil_data()->result();
         $data['member'] = $this->m_user->tampil_data_member()->result();
         $data['user'] = $this->m_user->tampil_data();
@@ -97,7 +109,11 @@ class Transaksi extends CI_Controller {
     }
 
     function data_diambil(){
-        $data['transaksi'] = $this->m_data->tampil_data_diambil();
+        $where = array (
+			'id_user' => $this->session->userdata('id'),
+            'status' => "diambil"
+		);
+		$data['transaksi'] = $this->m_outlet->data_laporan_kasir($where,'tb_transaksi')->result();
         $data['outlet'] = $this->m_outlet->tampil_data()->result();
         $data['member'] = $this->m_user->tampil_data_member()->result();
         $data['user'] = $this->m_user->tampil_data();

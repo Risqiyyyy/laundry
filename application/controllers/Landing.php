@@ -20,9 +20,6 @@ class Landing extends CI_Controller {
 		if($kode_invoice){
 			$data['trans'] = $this->m_data->invoice($kode_invoice);
 			$this->load->view('cek_invoice',$data);
-		}elseif($kode_invoice = NULL){
-			$this->session->set_flashdata('massage', 'kode invoice tidak Valid');
-			$this->load->view('landing');
 		}else{
 		$this->session->set_flashdata('massage', 'kode invoice tidak ada');
 		$this->load->view('landing');
