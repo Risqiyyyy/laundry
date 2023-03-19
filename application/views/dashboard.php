@@ -62,8 +62,14 @@
 								<div class="row">
 									<div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label clas="row">id_outlet</label>
-                                        <input type="text" value="<?= $this->session->userdata('id_outlet')?>" name="id_outlet" placeholder="<?= $this->session->userdata('id_outlet')?>" readonly>
+                                    <label>Outlet</label>
+												<select class="form-control" name="id_outlet">
+                                                    <option value="">No Selected</option>
+														<?php foreach($outlet as $row){?>
+														<option value="<?php echo $row->id;?>">
+															<?php echo $row->nama;?></option>
+														<?php }?>
+													</select>
 									    </div>
 									</div>
 									<div class="col-lg-3 col-sm-6 col-12">
@@ -76,10 +82,10 @@
                                                         placeholder="Kode Invoice" readonly>
 										</div>
 									</div>
-									<div class="col-lg-3 col-sm-6 col-12" hidden>
+									<div class="col-lg-3 col-sm-6 col-12">
 										<div class="form-group">
 											<label>Member</label>
-											<input type="text" value="<?= $this->session->userdata('id')?>" name="id_member" placeholder="<?= $this->session->userdata('role')?>">
+											<input type="text" value="<?= $this->session->userdata('id')?>" name="id_member">
 										</div>
 									</div>
 									<div class="col-lg-3 col-sm-6 col-12">
@@ -89,21 +95,21 @@
                                                         placeholder="<?php echo date('m/d/y');?>" readonly>
 										</div>
 									</div>
-									<div class="col-lg-3 col-sm-6 col-12">
+									<div class="col-lg-3 col-sm-6 col-12" hidden>
 										<div class="form-group">
                                         <label clas="row">Batas Waktu</label>
                                                     <input type="date" class="form-control" name="batas_waktu"
                                                         placeholder="Batas Waktu">
 										</div>
 									</div>
-									<div class="col-lg-3 col-sm-6 col-12">
+									<div class="col-lg-3 col-sm-6 col-12" hidden>
 										<div class="form-group">
                                         <label clas="row">Tanggal Bayar</label>
                                                     <input type="date" class="form-control" name="tgl_bayar"
                                                         placeholder="Tanggal Bayar">
 										</div>
 									</div>
-									<div class="col-lg-3 col-sm-6 col-12">
+									<div class="col-lg-3 col-sm-6 col-12" hidden>
 										<div class="form-group">
                                         <label clas="row">Biaya Tambahan</label>
                                                     <input type="text" class="form-control" name="biaya_tambahan"
@@ -129,32 +135,30 @@
                                                         placeholder="QTY">
                                          </div>
 									</div>
-                                    <div class="col-lg-3 col-sm-6 col-12">
+                                    <div class="col-lg-3 col-sm-6 col-12" hidden>
 										<div class="form-group">
                                         <label clas="row">Diskon</label>
                                                     <input type="text" class="form-control" name="diskon"
                                                         placeholder="Diskon">
                                          </div>
 									</div>
-                                    <div class="col-lg-3 col-sm-6 col-12">
+                                    <div class="col-lg-3 col-sm-6 col-12" hidden>
 										<div class="form-group">
                                         <label clas="row">Pajak</label>
                                                     <input type="text" class="form-control" name="pajak"
                                                         placeholder="Pajak">
                                          </div>
 									</div>
-                                    <div class="col-lg-3 col-sm-6 col-12">
+                                    <div class="col-lg-3 col-sm-6 col-12" hidden>
 										<div class="form-group">
                                         <label clas="row">Status Pembayaran</label>
-                                                    <select class="form-control" name="dibayar" required>
-                                                        <option>No Selected</option>
-                                                        <option value="dibayar">Dibayar</option>
+                                                    <select class="form-control" name="dibayar">
                                                         <option value="belum_dibayar">Belum Bayar</option>
                                                     </select>
                                          </div>
 									</div>
-                                    <div class="col-lg-3 col-sm-6 col-12">
-										<div class="form-group">
+                                    <div class="col-lg-3 col-sm-6 col-12" >
+										<div class="form-group" hidden>
                                         <label clas="row">User</label>
                                         <input type="text" value="<?= $this->session->userdata('id')?>" name="id_user" placeholder="<?= $this->session->userdata('role')?>"  readonly>
 									    </div>

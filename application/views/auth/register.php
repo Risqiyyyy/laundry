@@ -30,6 +30,11 @@
                         <form method="POST" class="register-form" id="register-form">
                         <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <?php $a = rand(1,3); ?>
+                                <input type="text" name="id" value="<?php $a ?>"/>
+                            </div>
+                        <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="nama" id="name" placeholder="Nama Lengkap"/>
                                 <?= form_error('nama', '<small class="text-danger pl-2">', '</small>') ?>
                             </div>

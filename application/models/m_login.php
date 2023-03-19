@@ -7,7 +7,9 @@ class M_login extends CI_Model{
 
 	function login_user($username,$password)
 	{
+
         $query = $this->db->get_where('tb_user',array('username'=>$username));
+		$member = $this->db->get('tb_member');
         if($query->num_rows() > 0)
         {
             $data_user = $query->row();
@@ -18,7 +20,8 @@ class M_login extends CI_Model{
 					'is_login' => True,
 					'role' => $data_user->role,
 					'id_outlet' => $data_user->id_outlet,
-					'id' => $data_user->id
+					'id' => $data_user->id,
+					'id_member'=>$data_member->id
 				);				
 				$this->session->set_userdata($data_session);
                 return TRUE;
@@ -32,9 +35,10 @@ class M_login extends CI_Model{
         }
 	}
 	
-	function register($nama,$username,$password,$id_outlet,$akses,$alamat,$tlp)
+	function register($id,$nama,$username,$password,$id_outlet,$akses,$alamat,$tlp)
 	{
 		$data_user = array(
+			'id' =>$id,
 			'nama'=>$nama,
 			'username'=>$username,
 			'password'=>password_hash($password,PASSWORD_DEFAULT),
@@ -42,6 +46,7 @@ class M_login extends CI_Model{
 			'role'=> "member"
 		);
 		$data_member = array(
+			'id' => $id,
 			'nama' => $nama,
 			'alamat' => $alamat,
 			'tlp' => $tlp

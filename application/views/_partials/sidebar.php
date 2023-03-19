@@ -63,8 +63,18 @@
 				<li class=""><a href="<?= base_url('dashboard')?>"><img
 							src="<?= base_url();?>/template/assets/img/icons/dashboard.svg"
 							alt="img"><span>Transaksi</span></a></li>
-							<li class=""><a href="<?= base_url('')?>"><i data-feather="book"></i><span>History</span></a>
-				</li>
+							<li>
+								<a href="<?= base_url('member/pesanan')?>">
+									<i data-feather="shopping-cart"></i>
+									<span>Pemesanan</span>
+								</a>
+							</li>
+							<li>
+								<a href="<?= base_url('member/history')?>">
+									<i data-feather="book"></i>
+									<span>History</span>
+								</a>
+							</li>
 				<?php } ?>
 			</ul>
 		</div>

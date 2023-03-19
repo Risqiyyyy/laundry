@@ -64,6 +64,7 @@ class Auth extends CI_Controller {
         if ($this->session->userdata('role') != null) {
             redirect('dashboard');
         }
+        $id = $this->input->post('id');
         $nama = $this->input->post('nama');
         $username = $this->input->post('username');
 		$password = $this->input->post('password');
@@ -71,7 +72,7 @@ class Auth extends CI_Controller {
         $role = $this->input->post('role');
         $alamat = $this->input->post('alamat');
         $tlp = $this->input->post('tlp');
-		    $this->m_login->register($nama,$username,$password,$id_outlet,$role,$alamat,$tlp);
+		    $this->m_login->register($id,$nama,$username,$password,$id_outlet,$role,$alamat,$tlp);
             $this->session->set_flashdata('message', '<div class="alert alert-info">Data Berhasil Ditambahkan</div>');
 			redirect(base_url("auth/register"));
         }

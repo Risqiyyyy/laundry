@@ -29,7 +29,7 @@
 							<form action="<?php echo base_url('paket/tambah'); ?>" method="POST">
                                     <div class="modal-body">
                                         <div class="form-row">
-                                                <div class="form-group">
+                                                <div class="form-group" hidden>
                                                 <label>Outlet</label>
 												<select class="form-control" name="id_outlet">
                                                     <option value="">No Selected</option>
