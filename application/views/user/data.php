@@ -56,9 +56,10 @@
 													<label>Role</label>
 													<select class="form-control" name="role" required>
 														<option value="">No Selected</option>
-														<option value="Admin">Admin</option>
-														<option value="Kasir">Kasir</option>
-														<option value="Owner">Owner</option>
+														<option value="admin">Admin</option>
+														<option value="kasir">Kasir</option>
+														<option value="owner">Owner</option>
+														<option value="Kurir">Kurir</option>
 													</select>
 												</div>
 

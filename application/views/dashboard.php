@@ -58,7 +58,7 @@
 
                     <div class="card">
 							<div class="card-body">
-                            <form action="<?php echo base_url('transaksi/tambah'); ?>" method="POST">
+                            <form action="<?php echo base_url('transaksi/tambah_transaksi_user'); ?>" method="POST">
 								<div class="row">
 									<div class="col-lg-3 col-sm-6 col-12">
                                     <div class="form-group">
@@ -91,7 +91,7 @@
 									<div class="col-lg-3 col-sm-6 col-12">
 										<div class="form-group">
                                         <label clas="row">Tanggal</label>
-                                                    <input type="text" class="form-control" name="tgl"
+                                                    <input type="text" class="form-control" name="tgl" value="<?php echo date('m/d/y');?>"
                                                         placeholder="<?php echo date('m/d/y');?>" readonly>
 										</div>
 									</div>

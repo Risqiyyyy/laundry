@@ -64,13 +64,13 @@
 							src="<?= base_url();?>/template/assets/img/icons/dashboard.svg"
 							alt="img"><span>Transaksi</span></a></li>
 							<li>
-								<a href="<?= base_url('member/pesanan')?>">
+								<a href="<?= base_url('member/pesanan/')?><?= $this->session->userdata('id')?>">
 									<i data-feather="shopping-cart"></i>
 									<span>Pemesanan</span>
 								</a>
 							</li>
 							<li>
-								<a href="<?= base_url('member/history')?>">
+								<a href="<?= base_url('member/history/')?><?= $this->session->userdata('id')?>">
 									<i data-feather="book"></i>
 									<span>History</span>
 								</a>

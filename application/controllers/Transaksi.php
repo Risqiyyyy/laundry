@@ -69,6 +69,47 @@ class Transaksi extends CI_Controller {
 		}
     }
 
+    function tambah_transaksi_user(){
+        if(isset($_POST['submit']))
+		{   
+            $id = $this->input->post('');
+			$id_outlet = $this->input->post('id_outlet');
+            $id_paket = $this->input->post('id_paket');
+            $qty = $this->input->post('qty');
+            $kode_invoice = $this->input->post('kode_invoice');
+            $id_member = $this->input->post('id_member');
+            $tgl = $this->input->post('tgl');
+            $batas_waktu = $this->input->post('batas_waktu');
+            $tgl_bayar = $this->input->post('tgl_bayar');
+            $biaya_tambahan = $this->input->post('biaya_tambahan');
+            $diskon = $this->input->post('diskon');
+            $pajak = $this->input->post('pajak');
+            $status = $this->input->post('status');
+            $dibayar = $this->input->post('dibayar');
+            $id_user = $this->input->post('id_user');
+			$data_trasnsaksi = array(
+				'id_outlet'=> $id_outlet,
+                'id_paket'=> $id_paket,
+				'kode_invoice' => $kode_invoice,
+                'id_member' => $id_member,
+                'tgl' => $tgl,
+                'batas_waktu' => $batas_waktu,
+                'tgl_bayar' => $tgl_bayar,
+                'biaya_tambahan' => $biaya_tambahan,
+                'qty'=> $qty,
+                'diskon' => $diskon,
+                'pajak' => $pajak,
+                'status' => "pending",
+                'dibayar' => $dibayar,
+                'id_user' => $id_user
+			);
+            // var_dump($data_trasnsaksi);
+            // die;
+			$this->m_data->tambah_transaksi($data_trasnsaksi);
+			redirect('dashboard');
+		}
+    }
+
     function data_baru(){
 		$where = array (
 			'id_user' => $this->session->userdata('id'),

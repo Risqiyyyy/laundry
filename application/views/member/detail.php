@@ -39,7 +39,7 @@
 											<li class="text-muted">Member : <span
 													style="color:#5d9fc5 ;"><?= $trans['nama_member']?></span></li>
 											<li class="text-muted">Outlet : <?= $trans['nama_outlet']?></li>
-											<li class="text-muted">Nama Kasir : <?= $trans['nama_user']?></li>
+											<!-- <li class="text-muted">Nama Kasir : <?= $trans['nama_user']?></li> -->
 											<li class="text-muted"><i class="fas fa-phone"></i> <?= $trans['tlp']?></li>
 										</ul>
 									</div>
@@ -109,10 +109,16 @@
 									<div class="col-xl-10">
 										<p>Thank you for your purchase</p>
 									</div>
-									
+									<?php if($this->session->userdata('role') == "admin" || $this->session->userdata('role') == "owner"  || $this->session->userdata('role') == "kasir"){ ?>
 									<div class="col-xl-2">
                                     <a class="btn btn-primary text-capitalize"  style="background-color:#60bdf3 ;" href="<?php echo base_url(); ?>transaksi/">Kembali</a>
 									</div>
+										<?php }?>
+										<?php if($this->session->userdata('role') == "member" ){?>
+									<div class="col-xl-2">
+                                    <a class="btn btn-primary text-capitalize"  style="background-color:#60bdf3 ;" href="<?php echo base_url(); ?>dashboard/">Kembali</a>
+									</div>
+									<?php } ?>
 								</div>
 
 							</div>

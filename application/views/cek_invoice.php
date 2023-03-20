@@ -34,15 +34,11 @@
 
 								</div>
 
-
 									<div class="row">
 										<div class="col-xl-4">
 											<ul class="list-unstyled">
 												<li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i>
 													<span class="fw-bold">Tanggal Transaksi: </span><?= $trans['tgl']?>
-												</li>
-												<li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i>
-													<span class="fw-bold">Batas Waktu: </span><?= $trans['batas_waktu']?>
 												</li>
 												<li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i>
 													<span class="me-1 fw-bold">Status:</span><span
