@@ -84,11 +84,10 @@
 											<input type="text" value="<?= $this->session->userdata('id')?>" name="id_member">
 										</div>
 									</div>
-									<div class="col-lg-3 col-sm-6 col-12">
+									<div class="col-lg-3 col-sm-6 col-12" hidden>
 										<div class="form-group">
                                         <label clas="row">Tanggal</label>
-                                                    <input type="text" class="form-control" name="tgl" value="<?php echo date('m/d/y');?>"
-                                                        placeholder="<?php echo date('m/d/y');?>" readonly>
+                                                    <input type="text" class="form-control" name="tgl" value="<?php echo date('Ymd')?>" readonly>
 										</div>
 									</div>
 									<div class="col-lg-3 col-sm-6 col-12" hidden>

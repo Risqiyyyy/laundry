@@ -46,7 +46,7 @@ class M_login extends CI_Model{
 			'role'=> "member"
 		);
 		$data_member = array(
-			'id' => $id,
+			'id' => $data_user['id'],
 			'nama' => $nama,
 			'alamat' => $alamat,
 			'tlp' => $tlp

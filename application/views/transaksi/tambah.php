@@ -49,7 +49,7 @@
 										<div class="form-group">
                                         <label clas="row">Tanggal</label>
                                                     <input type="text" class="form-control" name="tgl"
-                                                        placeholder="<?php echo date('m/d/y');?>" readonly>
+                                                    value="<?php echo date('Ymd')?>" readonly>
 										</div>
 									</div>
 									<div class="col-lg-3 col-sm-6 col-12">

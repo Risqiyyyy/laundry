@@ -125,7 +125,7 @@ class Transaksi extends CI_Controller {
 
     function data_proses(){
         $where = array (
-			'id_user' => $this->session->userdata('id'),
+			'id_outlet' => $this->session->userdata('id_outlet'),
             'status' => "proses"
 		);
 		$data['transaksi'] = $this->m_outlet->data_laporan_kasir($where,'tb_transaksi')->result();
@@ -138,7 +138,7 @@ class Transaksi extends CI_Controller {
 
     function data_selesai(){
         $where = array (
-			'id_user' => $this->session->userdata('id'),
+			'id_outlet' => $this->session->userdata('id_outlet'),
             'status' => "selesai"
 		);
 		$data['transaksi'] = $this->m_outlet->data_laporan_kasir($where,'tb_transaksi')->result();
@@ -151,7 +151,7 @@ class Transaksi extends CI_Controller {
 
     function data_diambil(){
         $where = array (
-			'id_user' => $this->session->userdata('id'),
+			'id_outlet' => $this->session->userdata('id_outlet'),
             'status' => "diambil"
 		);
 		$data['transaksi'] = $this->m_outlet->data_laporan_kasir($where,'tb_transaksi')->result();

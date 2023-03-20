@@ -20,7 +20,7 @@ class Member extends CI_Controller {
 	{
 		$where = array(
 			'id_user' => $id,
-			'status' => "selesai");
+			'status' => "diambil");
 		$data['trans'] = $this->m_outlet->tampil_data_transaksi($where,'tb_transaksi')->result();
 		$this->load->view('member/history',$data);
 		

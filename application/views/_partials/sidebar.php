@@ -35,20 +35,20 @@
 						<li>
 							<a href="<?= base_url('transaksi/data_baru/')?><?= $this->session->userdata('id')?>">Transaksi
 								Baru <span
-									class="btn-danger"><?= $this->db->query('SELECT * FROM tb_transaksi where status ="baru" AND id_user ='. $this->session->userdata('id'))->num_rows()?></span>
+									class="btn-danger"><?= $this->db->query('SELECT * FROM tb_transaksi where status ="baru" AND id_outlet ='. $this->session->userdata('id_outlet'))->num_rows()?></span>
 							</a>
 						</li>
 						<li><a href="<?= base_url('transaksi/data_proses/')?><?= $this->session->userdata('id')?>">Di
 								Proses <span
-									class="btn-danger"><?= $this->db->query('SELECT * FROM tb_transaksi where status ="proses" AND id_user ='. $this->session->userdata('id'))->num_rows()?></a>
+									class="btn-danger"><?= $this->db->query('SELECT * FROM tb_transaksi where status ="proses" AND id_outlet ='. $this->session->userdata('id_outlet'))->num_rows()?></a>
 						</li>
 						<li><a href="<?= base_url('transaksi/data_selesai/')?><?= $this->session->userdata('id')?>">Selesai
 								<span
-									class="btn-danger"><?= $this->db->query('SELECT * FROM tb_transaksi where status ="selesai" AND id_user ='. $this->session->userdata('id'))->num_rows()?></a>
+									class="btn-danger"><?= $this->db->query('SELECT * FROM tb_transaksi where status ="selesai" AND id_outlet ='. $this->session->userdata('id_outlet'))->num_rows()?></a>
 						</li>
 						<li><a href="<?= base_url('transaksi/data_diambil/')?><?= $this->session->userdata('id')?>">Diambil
 								<span
-									class="btn-danger"><?= $this->db->query('SELECT * FROM tb_transaksi where status ="diambil" AND id_user ='. $this->session->userdata('id'))->num_rows()?></a>
+									class="btn-danger"><?= $this->db->query('SELECT * FROM tb_transaksi where status ="diambil" AND id_outlet ='. $this->session->userdata('id_outlet'))->num_rows()?></a>
 						</li>
 					</ul>
 				</li>
