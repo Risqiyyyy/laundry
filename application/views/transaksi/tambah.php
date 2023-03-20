@@ -109,11 +109,8 @@
                                     <div class="col-lg-3 col-sm-6 col-12">
 										<div class="form-group">
                                         <label clas="row">Status Pembayaran</label>
-                                                    <select class="form-control" name="dibayar" required>
-                                                        <option>No Selected</option>
-                                                        <option value="dibayar">Dibayar</option>
-                                                        <option value="belum_dibayar">Belum Bayar</option>
-                                                    </select>
+                                        <input type="text" class="form-control" name="dibayar"
+                                                        placeholder="Dibayar" readonly>
                                          </div>
 									</div>
                                     <div class="col-lg-3 col-sm-6 col-12">

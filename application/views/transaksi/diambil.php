@@ -49,7 +49,11 @@
                                                     <td><?php echo $u->diskon ?></td>
                                                     <td><?php echo $u->pajak ?></td>
                                                     <td><?php echo $u->status ?></td>
-                                                    <td><?php echo $u->dibayar ?></td>
+                                                    <td><?php echo $u->dibayar ?> 
+                                                    <a
+                                                            href="<?php echo base_url(); ?>transaksi/bayar/<?php echo $u->id; ?>">
+                                                            <i data-feather="dollar-sign"></i></a>
+                                                        </td>
                                                     <td>
                                                         <a
                                                             href="<?php echo base_url(); ?>transaksi/detail_transaksi/<?php echo $u->id; ?>"><i data-feather="eye"></i></a>

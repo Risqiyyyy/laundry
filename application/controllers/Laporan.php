@@ -18,7 +18,7 @@ class Laporan extends CI_Controller {
 	public function laporan_kasir()
 	{
 		$where = array (
-			'id_user' => $this->session->userdata('id')
+			'id_outlet' => $this->session->userdata('id_outlet')
 		);
 		$data['trans'] = $this->m_outlet->data_laporan_kasir($where,'tb_transaksi')->result();
         // $data['transaksi'] = $this->m_data->tampil_data_transaksi();

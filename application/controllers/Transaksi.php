@@ -54,7 +54,7 @@ class Transaksi extends CI_Controller {
                 'diskon' => $diskon,
                 'pajak' => $pajak,
                 'status' => "baru",
-                'dibayar' => $dibayar,
+                'dibayar' => "dibayar",
                 'id_user' => $id_user
 			);
             // var_dump($data_trasnsaksi);
@@ -100,7 +100,7 @@ class Transaksi extends CI_Controller {
                 'diskon' => $diskon,
                 'pajak' => $pajak,
                 'status' => "pending",
-                'dibayar' => $dibayar,
+                'dibayar' => "belum_dibayar",
                 'id_user' => $id_user
 			);
             // var_dump($data_trasnsaksi);
@@ -192,7 +192,7 @@ class Transaksi extends CI_Controller {
         $this->db->set($data);
         $this->db->where('id', $id);
         $this->db->update('tb_transaksi');
-        redirect('transaksi/data_proses');
+        redirect('transaksi/data_selesai');
     }
     public function diambil_update($id)
     {
@@ -203,7 +203,7 @@ class Transaksi extends CI_Controller {
         $this->db->set($data);
         $this->db->where('id', $id);
         $this->db->update('tb_transaksi');
-        redirect('transaksi/data_proses');
+        redirect('transaksi/data_diambil');
     }
     // function print(){
     //     $data['transaksi'] = $this->m_data->tampil_data_transaksi();
@@ -217,6 +217,17 @@ class Transaksi extends CI_Controller {
     function print($id){
         $data['trans'] = $this->m_data->detail_transaksi($id);
         $this->load->view('print',$data);
+    }
+
+    function bayar($id){
+        $data = array(
+            'dibayar' => "dibayar"
+            );
+            
+        $this->db->set($data);
+        $this->db->where('id', $id);
+        $this->db->update('tb_transaksi');
+        redirect('transaksi/data_diambil');
     }
 
     function pesanan_masuk(){
