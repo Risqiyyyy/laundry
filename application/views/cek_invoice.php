@@ -53,7 +53,7 @@
 								<hr>
 								<div class="row">
 									<div class="col-xl-10">
-										<p>Thank you for your purchase</p>
+										<p>Thank you</p>
 									</div>
 								</div>
 
