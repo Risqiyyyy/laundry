@@ -21,9 +21,7 @@
                                             <thead>
                                                 <tr>
                                                     <th>NO</th>
-                                                    <th>Outlet</th>
                                                     <th>Kode Invoice</th>
-                                                    <th>Member</th>
                                                     <th>Tanggal</th>
                                                     <th>Batas Waktu</th>
                                                     <th>Tanggal Bayar</th>
@@ -32,7 +30,6 @@
                                                     <th>Pajak</th>
                                                     <th>Status</th>
                                                     <th>Bayar</th>
-                                                    <th>ID User</th>
                                                     <th>Aksi</th>
                                                 </tr>
                                             </thead>
@@ -44,9 +41,7 @@
 										foreach($transaksi as $u){
 										?>
                                                     <td><?php echo $no++ ?></td>
-                                                    <td><?php echo $u->id_outlet ?></td>
                                                     <td><?php echo $u->kode_invoice ?></td>
-                                                    <td><?php echo $u->id_member ?></td>
                                                     <td><?php echo $u->tgl ?></td>
                                                     <td><?php echo $u->batas_waktu ?></td>
                                                     <td><?php echo $u->tgl_bayar ?></td>
@@ -55,7 +50,6 @@
                                                     <td><?php echo $u->pajak ?></td>
                                                     <td><?php echo $u->status ?></td>
                                                     <td><?php echo $u->dibayar ?></td>
-                                                    <td><?php echo $u->id_user ?></td>
                                                     <td>
                                                         <a
                                                             href="<?php echo base_url(); ?>transaksi/detail_transaksi/<?php echo $u->id; ?>"><i data-feather="eye"></i></a>
