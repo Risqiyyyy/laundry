@@ -28,6 +28,10 @@
 							data-feather="repeat"></i><span>Transaksi</span><span class="menu-arrow"></span></a>
 					<ul>
 						<li class=""><a href="<?= base_url('transaksi')?>">Tambah Transaksi</a></li>
+						<li class=""><a href="<?= base_url('transaksi/pesanan_masuk')?>">Pesanan Masuk
+						<span
+									class="btn-danger"><?= $this->db->query('SELECT * FROM tb_transaksi where status ="pending" AND id_outlet ='. $this->session->userdata('id_outlet'))->num_rows()?></span>
+					</a></li>
 						<li>
 							<a href="<?= base_url('transaksi/data_baru/')?><?= $this->session->userdata('id')?>">Transaksi
 								Baru <span

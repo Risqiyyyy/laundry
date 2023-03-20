@@ -218,4 +218,13 @@ class Transaksi extends CI_Controller {
         $data['trans'] = $this->m_data->detail_transaksi($id);
         $this->load->view('print',$data);
     }
+
+    function pesanan_masuk(){
+        $where = array (
+            'id_outlet' => $this->session->userdata('id_outlet'),
+            'status' => "pending"
+		);
+		$data['transaksi'] = $this->m_outlet->data_laporan_kasir($where,'tb_transaksi')->result();
+        $this->load->view('transaksi/pesanan_masuk',$data);
+    }
 }

@@ -51,10 +51,6 @@
             <main>
                 <div class="container-fluid">
                     <h1 class="mt-4">Tambah Transaksi</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">tambah paket transaksi</li>
-                    </ol>
-                    <!-- modal -->
 
                     <div class="card">
 							<div class="card-body">
@@ -64,7 +60,7 @@
                                     <div class="form-group">
                                     <label>Outlet</label>
 												<select class="form-control" name="id_outlet">
-                                                    <option value="">No Selected</option>
+                                                    <option value="">Pilih Outlet terdekat</option>
 														<?php foreach($outlet as $row){?>
 														<option value="<?php echo $row->id;?>">
 															<?php echo $row->nama;?></option>
@@ -82,7 +78,7 @@
                                                         placeholder="Kode Invoice" readonly>
 										</div>
 									</div>
-									<div class="col-lg-3 col-sm-6 col-12">
+									<div class="col-lg-3 col-sm-6 col-12" hidden>
 										<div class="form-group">
 											<label>Member</label>
 											<input type="text" value="<?= $this->session->userdata('id')?>" name="id_member">
@@ -120,7 +116,7 @@
 										<div class="form-group">
                                         <label clas="row">Paket</label>
                                                     <select class="form-control" name="id_paket" required>
-                                                        <option value="">No Selected</option>
+                                                        <option value="">Pilih Paket</option>
                                                         <?php foreach($paket as $row):?>
                                                         <option value="<?php echo $row->id;?>">
                                                             <?php echo $row->jenis;?></option>
@@ -176,6 +172,12 @@
         </div>
         <?php }?>
         <!-- end -->
+        <!-- kurir -->
+        <?php if($this->session->userdata('role') == "kurir"){?>
+
+        <?php }?>
+
+        <!-- end kurir -->
 
 
     </div>
